@@ -136,7 +136,7 @@ eco give testing 500
   </tbody>
 </table>## Config.yml文件示例
 
-{% code title="config.yml" %}
+
 ```yaml
 ## McrmbShop插件前缀
 prefix: §e【点券商城】
@@ -220,5 +220,5 @@ shops:
     cmd:
     - 'eco give {player} {sum}|||100'
 ```
-{% endcode %}
+
 

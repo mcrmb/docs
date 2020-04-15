@@ -2,23 +2,27 @@
 
 很多服主使用了PlayerPoints（后续简称PP）作为服务器点券管理插件，早期，Mcrmb提供了魔改版的PlayerPoints供服主接入使用，目前最新的核心插件版本已经支持转入原生PP模式。
 
-{% tabs %}
-{% tab title="转入原生PlayerPoints" %}
+
+<!-- tabs:start -->
+
+#### ** 转入原生PlayerPoints **
+
 该模式下，Mcrmb云平台的玩家余额仅起到桥梁作用：
 
 * 玩家充值，云平台余额增加
 * 玩家 `登陆服务器` 或 在 `服务器内查询点券余额`
 * 插件启动转入逻辑，将余额 `转入PlayerPoints` ，并 `扣减云平台余额`
 * 完成点券转入
-{% endtab %}
 
-{% tab title="魔改PlayerPoints" %}
+#### ** 魔改PlayerPoints **
+
 该模式下，PlayerPoints的点券查询逻辑被嫁接至MCRMB云平台：
 
 * 玩家充值，云平台余额增加
 * 玩家在游戏内消费，相关插件调用PlayerPoints，PlayerPoints调用Mcrmb核心插件接口，完成操作。
-{% endtab %}
-{% endtabs %}
+
+<!-- tabs:end -->
+
 
 ?>两种模式各有特点。  
 **魔改模式：**点券上云，可轻松实现跨服点券同步；但因为PlayerPoints的发起逻辑处于主线程内，网络不佳时将导致Mcrmb的联网查询请求卡服。  
@@ -27,7 +31,7 @@
 
 ## 注册平台账号
 
-{% embed url="https://www.mcrmb.com/User/showReg" caption="" %}
+https://www.mcrmb.com/User/showReg
 
 ## 新增一个服务器
 

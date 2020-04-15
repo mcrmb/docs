@@ -120,7 +120,6 @@ Reward:
 
 ## 插件下载
 
-{% embed url="http://ci.mcrmb.com/job/McrmbBuyCommand/" %}
+http://ci.mcrmb.com/job/McrmbBuyCommand/
 
-{% hint style="success" %}
-CI持续构建平台（ci.mcrmb.com）看上去很复杂，其实只需要点进相应的项目，拉到下方，找到最终成功构建，下载jar文件即可，Mcrmb平台各插件均在CI发布。
+?>CI持续构建平台（ci.mcrmb.com）看上去很复杂，其实只需要点进相应的项目，拉到下方，找到最终成功构建，下载jar文件即可，Mcrmb平台各插件均在CI发布。

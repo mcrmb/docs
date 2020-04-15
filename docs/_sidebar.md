@@ -4,7 +4,7 @@
     * [快速部署MCRMB](fast.md)
     * [核心插件使用说明](core-plugin.md)
     * [平台历史更新记录](history.md)
-    * [历史帮助文档](history-help.md)
+    * [原帮助文档(已废弃)](history-help.md)
 
 * 接口文档
 

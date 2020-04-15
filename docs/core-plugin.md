@@ -142,8 +142,8 @@
 | %mcrmb\_recharge% | 玩家的累计充值 |
 | %mcrmb\_consume% | 玩家的累计消费 |
 
-{% hint style="success" %}
-点券的**累计充值**目前已经可以选择**不统计手工加点**部分，服主可以到Mcmrb管理平台-&gt;服务器管理-&gt;服务器设置-&gt;手动加点计入累计选项，选择不计入。
+?>点券的**累计充值**目前已经可以选择**不统计手工加点**部分，服主可以到Mcmrb管理平台-&gt;服务器管理-&gt;服务器设置-&gt;手动加点计入累计选项，选择不计入。
+
 ##  **ScoreboardStats变量**
 
 | 变量 | 含义 |
@@ -158,7 +158,7 @@
 
 ## 插件接口及事件
 
-{% page-ref page="apis/core-plugin-api.md" %}
+[go](/apis/core-plugin-api)
 
 ## 默认Config.yml 
 

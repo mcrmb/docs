@@ -70,7 +70,8 @@ MCRMB为您的资金安全提供了最有力的保障：**一清模式**
 
 ## 历史改进
 
-{% page-ref page="history.md" %}
+[GO](/history)
+
 
 
 
