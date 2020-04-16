@@ -82,10 +82,10 @@ eco give testing 500
     </tr>
     <tr>
       <td style="text-align:left">slot</td>
-      <td style="text-align:left">在面板上的Slot位置，如：0,1,2，
-        <br
-        />面板每行有九个位置，
-        第一行是0-8，第二行是9-17，以此类推</td>
+      <td style="text-align:left">
+      在面板上的Slot位置，如：0,1,2，<br>
+      面板每行有九个位置，第一行是0-8，第二行是9-17，以此类推
+      </td>
     </tr>
     <tr>
       <td style="text-align:left">permission</td>
