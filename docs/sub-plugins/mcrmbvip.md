@@ -67,7 +67,7 @@
 
 ## Config.yml文件示范
 
-含有配置说明，建议仔细阅读。cmd部分的定义，请参考 [McrmbShop插件中cmd定义说明](https://help.mcrmb.com/sub-plugins/mcrmbshop#ding-yi-shang-pin-zhi-ling-cmd)。
+含有配置说明，建议仔细阅读。cmd部分的定义，请参考 [McrmbShop插件中cmd定义说明](/sub-plugins/mcrmbshop?id=定义商品指令cmd)。
 
 ```yaml
 ##VIP中心的展示前缀
