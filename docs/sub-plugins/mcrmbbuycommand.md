@@ -97,7 +97,7 @@
 
 ### 配合 ChestCommands 灵活运用
 
-```text
+```yaml
 COMMAND: 'console: bbuy {player} 50 购买钻石剑与100金币 give {player} 276 1；eco give {player} 100'
 ```
 
@@ -106,7 +106,7 @@ COMMAND: 'console: bbuy {player} 50 购买钻石剑与100金币 give {player} 27
 ?>注意，ChestCommand的玩家名变量为{player}，虽然与McrmbBuyCommand一样，但不会冲突，不必担心。
 ### 配合 Bossshop 灵活运用
 
-```text
+```yaml
 RewardType: command
 Reward:
 - bbuy %player% 50 购买钻石剑与100金币 give {player} 276 1；eco give {player} 100
