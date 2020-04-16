@@ -17,8 +17,8 @@
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">&#x6307;&#x4EE4;</th>
-      <th style="text-align:left">&#x8BF4;&#x660E;</th>
+      <th style="text-align:left">指令</th>
+      <th style="text-align:left">说明</th>
     </tr>
   </thead>
   <tbody>
@@ -29,8 +29,8 @@
     <tr>
       <td style="text-align:left">/b lucky buy &lt;drawcode&gt;</td>
       <td style="text-align:left">
-        <p>&#x4F7F;&#x7528;&#x6307;&#x4EE4;&#x8D2D;&#x4E70;&#x62BD;&#x5956;&#xFF08;&#x5C55;&#x793A;&#x6027;&#xFF09;</p>
-        <p>drawcode = &#x62BD;&#x5956;&#x4EE3;&#x7801;</p>
+        &#x4F7F;&#x7528;&#x6307;&#x4EE4;&#x8D2D;&#x4E70;&#x62BD;&#x5956;&#xFF08;&#x5C55;&#x793A;&#x6027;&#xFF09;<br>
+        drawcode = &#x62BD;&#x5956;&#x4EE3;&#x7801;
       </td>
     </tr>
     <tr>
@@ -48,7 +48,7 @@
 
 | 指令 | 说明 |
 | :--- | :--- |
-| /b lucky clean &lt;drawcode&gt; | 清理某个抽奖项目的累计数据 |
+| /b lucky clean \<drawcode\> | 清理某个抽奖项目的累计数据 |
 | /b vip reload | 重新载入配置 |
 
 ## 权重计算方式
