@@ -12,93 +12,25 @@
 核心插件中的config.yml文件，用于配置插件各项设置。
 
 ?>直接编辑config.yml文件时，请注意yml格式，每一行的缩进不能随便修改，冒号后的1个空格不能随意删除~
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">&#x914D;&#x7F6E;&#x9879;</th>
-      <th style="text-align:left">&#x7C7B;&#x578B;</th>
-      <th style="text-align:left">&#x91CA;&#x4E49;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">sid</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">&#x670D;&#x52A1;&#x5668;&#x7684;SID</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">key</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">&#x670D;&#x52A1;&#x5668;&#x7684;KEY</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">logapi</td>
-      <td style="text-align:left">boolean</td>
-      <td style="text-align:left">&#x662F;&#x5426;&#x5C55;&#x51FA;API&#x8BF7;&#x6C42;&#x5185;&#x5BB9;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">renew_on_join</td>
-      <td style="text-align:left">boolean</td>
-      <td style="text-align:left">&#x662F;&#x5426;&#x5728;&#x73A9;&#x5BB6;&#x52A0;&#x5165;&#x670D;&#x52A1;&#x5668;&#x65F6;&#x5237;&#x65B0;&#x4E00;&#x6B21;&#x70B9;&#x5238;&#x4F59;&#x989D;&#x7F13;&#x5B58;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">cache_timeout</td>
-      <td style="text-align:left">int</td>
-      <td style="text-align:left">&#x7F13;&#x5B58;&#x8D85;&#x65F6;&#x65F6;&#x95F4;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">whitelist</td>
-      <td style="text-align:left">int</td>
-      <td style="text-align:left">
-        &#x767D;&#x540D;&#x5355;&#x95E8;&#x69DB;&#x529F;&#x80FD;&#xFF0C;&#x82E5;&#x4E3A;0&#x5219;&#x7981;&#x7528;<br>&#x82E5;&#x5927;&#x4E8E;0&#xFF0C;&#x73A9;&#x5BB6;&#x9700;&#x8981;&#x6709;&#x8BE5;&#x6570;&#x503C;&#x7684;&#x70B9;&#x5238;&#x4F59;&#x989D;&#x65B9;&#x53EF;&#x8FDB;&#x670D;
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">op_modify</td>
-      <td style="text-align:left">boolean</td>
-      <td style="text-align:left">OP&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x64CD;&#x4F5C;&#x73A9;&#x5BB6;&#x70B9;&#x5238;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">qrpay_ingame</td>
-      <td style="text-align:left">boolean</td>
-      <td style="text-align:left">&#x662F;&#x5426;&#x5F00;&#x542F;&#x6E38;&#x620F;&#x5185;&#x626B;&#x7801;&#x652F;&#x4ED8;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">qrpay_compatible</td>
-      <td style="text-align:left">boolean</td>
-      <td style="text-align:left">&#x6E38;&#x620F;&#x5185;&#x626B;&#x7801;&#x652F;&#x4ED8;&#x517C;&#x5BB9;&#x6A21;&#x5F0F;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">playerpoints</td>
-      <td style="text-align:left">boolean</td>
-      <td style="text-align:left">
-        &#x8F6C;&#x5165;PlayerPoints&#x6A21;&#x5F0F;<br>&#x672C;&#x529F;&#x80FD;&#x5F00;&#x542F;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;MCRMB&#x7CFB;&#x5217;&#x5B50;&#x63D2;&#x4EF6;&#x4E0D;&#x53EF;&#x7528;&#x3002;&#x56E0;&#x4E3A;&#x70B9;&#x5238;&#x53EA;&#x5728;MCRMB&#x4E2D;&#x4E34;&#x65F6;&#x505C;&#x7559;&#xFF0C;&#x73A9;&#x5BB6;&#x8FDB;&#x670D;&#x6216;&#x5237;&#x65B0;&#x4F59;&#x989D;&#x65F6;&#xFF0C;&#x70B9;&#x5238;&#x5C06;&#x8F6C;&#x5165;<code>PlayerPoints</code>&#x63D2;&#x4EF6;
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">command</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">&#x6307;&#x4EE4;&#x5185;&#x5BB9;&#xFF0C;&#x8BF7;&#x52FF;&#x968F;&#x610F;&#x4FEE;&#x6539;!
-        &#x82E5;&#x4FEE;&#x6539;&#x5FC5;&#x987B;&#x540C;&#x65F6;&#x4FEE;&#x6539;
-        plugin.yml &#x6587;&#x4EF6;&#x3002;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">point</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">&#x5355;&#x4F4D;&#x540D;&#x79F0;&#xFF08;&#x70B9;&#x5238;&#x3001;&#x94BB;&#x77F3;&#x3001;&#x5143;&#x5B9D;&#x7B49;&#xFF09;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">prefix</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">&#x63D0;&#x793A;&#x524D;&#x7F00;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">help</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">&#x73A9;&#x5BB6;&#x5E2E;&#x52A9;&#x4FE1;&#x606F;</td>
-    </tr>
-  </tbody>
-</table>## 管理指令
+
+| 配置项 | 类型 | 释义 |
+|:---|:---|:---|
+| sid | string | 服务器的SID |
+| key | string | 服务器的KEY |
+| logapi | boolean | 是否展出API请求内容 |
+| renew_on_join | boolean | 是否在玩家加入服务器时刷新一次点券余额缓存 |
+| cache_timeout | int | 缓存超时时间 |
+| whitelist | int | 白名单门槛功能，若为0则禁用<br>若大于0，玩家需要有该数值的点券余额方可进服 |
+| op_modify | boolean | OP是否可以操作玩家点券 |
+| qrpay_ingame | boolean | 是否开启游戏内扫码支付 |
+| qrpay_compatible | boolean | 游戏内扫码支付兼容模式 |
+| playerpoints | boolean | 转入PlayerPoints模式<br>本功能开启情况下，MCRMB系列子插件不可用。因为点券只在MCRMB中临时停留，玩家进服或刷新余额时，点券将转入`PlayerPoints`插件 |
+| command | string | 指令内容，请勿随意修改! 若修改必须同时修改 plugin.yml 文件。 |
+| point | string | 单位名称（点券、钻石、元宝等） |
+| prefix | string | 提示前缀 |
+| help | string | 玩家帮助信息 |
+
+## 管理指令
 
 | 指令 | 作用 |
 | :--- | :--- |

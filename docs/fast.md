@@ -47,7 +47,7 @@ https://www.mcrmb.com/User/showReg
 核心插件请在此处下载：  
 [http://ci.mcrmb.com/job/MCRMB/](http://ci.mcrmb.com/job/MCRMB/)
 
-![&#x5982;&#x56FE;&#xFF0C;&#x62C9;&#x52A8;&#x9875;&#x9762;&#x5230;&#x6700;&#x4E0B;&#x65B9;&#xFF0C;&#x4E0B;&#x8F7D;&#x6700;&#x7EC8;&#x6210;&#x529F;&#x6784;&#x5EFA;&#x4E2D;&#x7684;jar&#x6587;&#x4EF6;&#x3002;](.gitbook/assets/image%20%281%29.png)
+![](.gitbook/assets/image%20%281%29.png)
 
 将最新版本的核心插件放置于服务器的`plugins`目录，启动服务器。  
 确保服务器中已有`PlayerPoints原版`插件。

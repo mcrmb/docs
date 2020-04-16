@@ -14,35 +14,13 @@
 
 ### 玩家
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">指令</th>
-      <th style="text-align:left">说明</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">/b lucky</td>
-      <td style="text-align:left">&#x67E5;&#x8BE2;&#x6240;&#x6709;&#x62BD;&#x5956;&#x4EE3;&#x7801;&#xFF0C;GUI&#x6A21;&#x5F0F;&#x76F4;&#x63A5;&#x51FA;GUI&#x9762;&#x677F;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">/b lucky buy &lt;drawcode&gt;</td>
-      <td style="text-align:left">
-        &#x4F7F;&#x7528;&#x6307;&#x4EE4;&#x8D2D;&#x4E70;&#x62BD;&#x5956;&#xFF08;&#x5C55;&#x793A;&#x6027;&#xFF09;<br>
-        drawcode = &#x62BD;&#x5956;&#x4EE3;&#x7801;
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">/b lucky buy &lt;drawcode&gt; sure</td>
-      <td style="text-align:left">&#x786E;&#x8BA4;&#x8D2D;&#x4E70;&#x62BD;&#x5956;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">/b lucky help</td>
-      <td style="text-align:left">&#x5C55;&#x793A;&#x5E2E;&#x52A9;&#x4FE1;&#x606F;</td>
-    </tr>
-  </tbody>
-</table>
+| 指令                           | 说明                               | 
+|:-----------------------------|:---------------------------------| 
+| /b lucky                     | 查询所有抽奖代码，GUI模式直接出GUI面板           | 
+| /b lucky buy \<drawcode\>      | 使用指令购买抽奖（展示性）<br>drawcode = 抽奖代码 | 
+| /b lucky buy \<drawcode\> sure | 确认购买抽奖                           | 
+| /b lucky help                | 展示帮助信息                           | 
+
 
 ### 管理
 

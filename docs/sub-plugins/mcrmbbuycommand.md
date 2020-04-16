@@ -8,41 +8,18 @@
 !>**因此，该插件的指令绝对不能让普通玩家直接有权限执行。**  
 通常情况下由其他插件来执行McrmbBuyCommand的指令，或服主在后台测试指令时可以直接执行，最新版本的McrmbBuyCommand插件已经限制非后台执行指令。
 
-## 指令
-
-/bbuy &lt;目标玩家&gt; &lt;点券价格&gt; &lt;消费说明/商品名&gt; &lt;商品命令，使用中文分号`；`分割&gt;
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">&#x53C2;&#x6570;</th>
-      <th style="text-align:left">&#x8BF4;&#x660E;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">&#x76EE;&#x6807;&#x73A9;&#x5BB6;</td>
-      <td style="text-align:left">&#x73A9;&#x5BB6;&#x540D;&#xFF0C;&#x8BE5;&#x64CD;&#x4F5C;&#x6267;&#x884C;&#x540E;&#x7684;&#x76EE;&#x6807;&#x73A9;&#x5BB6;&#x540D;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">&#x70B9;&#x5238;&#x4EF7;&#x683C;</td>
-      <td style="text-align:left">&#x8BE5;&#x64CD;&#x4F5C;/&#x5546;&#x54C1;&#x9700;&#x8981;&#x6D88;&#x8017;&#x76EE;&#x6807;&#x73A9;&#x5BB6;&#x591A;&#x5C11;&#x4E2A;&#x70B9;&#x5238;&#xFF1F;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">&#x6D88;&#x8D39;&#x8BF4;&#x660E;/&#x5546;&#x54C1;&#x540D;</td>
-      <td style="text-align:left">&#x4EC5;&#x8BB0;&#x5F55;&#x7528;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">&#x5546;&#x54C1;&#x547D;&#x4EE4;</td>
-      <td style="text-align:left">
-        &#x4F7F;&#x7528;&#x4E2D;&#x6587;&#x5206;&#x53F7;&#xFF1B;&#x5206;&#x5272;&#x7684;&#x591A;&#x4E2A;&#x9884;&#x8BBE;&#x6307;&#x4EE4;&#xFF0C;&#x5176;&#x4E2D;{player}&#x4E3A;&#x73A9;&#x5BB6;&#x540D;&#x53D8;&#x91CF;&#x3002;<br>&#x4EE5;op:&#x5F00;&#x5934;&#x7684;&#x6307;&#x4EE4;&#x5C06;&#x4E34;&#x65F6;&#x7ED9;&#x4E88;&#x73A9;&#x5BB6;&#x6743;&#x9650;&#x5E76;&#x7531;&#x73A9;&#x5BB6;&#x6267;&#x884C;&#x3002;<br><br>&#x4F8B;&#xFF1A;<br><code>op:say hi&#xFF1B;eco give {player} 100</code>
-        <br>&#x4EE5;&#x4E0A;&#x6307;&#x4EE4;&#xFF0C;&#x73A9;&#x5BB6;&#x5C06;&#x4EE5;OP&#x8EAB;&#x4EFD;&#x53D1;&#x5E03;&#x5168;&#x670D;&#x516C;&#x544A;&#x201C;hi&#x201D;&#xFF08;&#x7531;&#x73A9;&#x5BB6;&#x8EAB;&#x4EFD;&#x6267;&#x884C;&#xFF09;&#xFF0C;&#x5E76;&#x83B7;&#x5F97;100&#x4E2A;&#x91D1;&#x5E01;&#xFF08;&#x7531;&#x540E;&#x53F0;&#x6267;&#x884C;&#xFF09;
-      </td>
-    </tr>
-  </tbody>
-</table>## 指令结构
-
+## 指令结构
+/bbuy <目标玩家> <点券价格> <消费说明/商品名> <商品命令，使用中文分号`；`分割>
 ![](../.gitbook/assets/image%20%2811%29.png)
+
+### 指令参数说明
+| 参数 | 说明 |
+|:---|:---|
+| 目标玩家 | 玩家名，该操作执行后的目标玩家名 |
+| 点券价格 | 该操作/商品需要消耗目标玩家多少个点券？ |
+| 商品名/消费说明 | 商品名字，公屏展示时出现 |
+| 商品命令 | 使用中文分号；分割的多个预设指令，其中{player}为玩家名变量。<br>以op:开头的指令将临时给予玩家权限并由玩家执行。<br><br>例：<br>`op:say hi；eco give {player} 100`<br>以上指令，玩家将以OP身份发布全服公告“hi”（由玩家身份执行），并获得100个金币（由后台执行） |
+
 
 ###  指令示范1
 

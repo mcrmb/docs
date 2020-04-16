@@ -15,42 +15,15 @@
 
 ### 玩家
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">&#x6307;&#x4EE4;</th>
-      <th style="text-align:left">&#x8BF4;&#x660E;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">/b vip</td>
-      <td style="text-align:left">&#x67E5;&#x8BE2;&#x6240;&#x6709;VIP&#x4EE3;&#x7801;&#xFF0C;GUI&#x6A21;&#x5F0F;&#x76F4;&#x63A5;&#x51FA;GUI&#x9762;&#x677F;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">/b vip buy &lt;vipcode&gt; &lt;count&gt;</td>
-      <td style="text-align:left">
-        &#x4F7F;&#x7528;&#x6307;&#x4EE4;&#x8D2D;&#x4E70;VIP&#xFF08;&#x5C55;&#x793A;&#x6027;&#xFF09;<br>vipcode = VIP&#x4EE3;&#x7801;<br>count = &#x8D2D;&#x4E70;&#x6570;&#x91CF;
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">/b vip buy &lt;vipcode&gt; &lt;count&gt; sure</td>
-      <td style="text-align:left">&#x786E;&#x8BA4;&#x8D2D;&#x4E70;VIP</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">/b vip help</td>
-      <td style="text-align:left">&#x5C55;&#x793A;&#x5E2E;&#x52A9;&#x4FE1;&#x606F;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">/b vip me</td>
-      <td style="text-align:left">&#x67E5;&#x770B;&#x6211;&#x7684;VIP&#x4FE1;&#x606F;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">/b vip prefix &lt;prefix&gt;</td>
-      <td style="text-align:left">&#x8BBE;&#x7F6E;&#x6211;&#x7684;&#x79F0;&#x53F7;</td>
-    </tr>
-  </tbody>
-</table>
+| 指令                                | 说明                                                | 
+|:----------------------------------|:--------------------------------------------------| 
+| /b vip                            | 查询所有VIP代码，GUI模式直接出GUI面板                           | 
+| /b vip buy \<vipcode\> \<count\>      | 使用指令购买VIP（展示性）<br>vipcode = VIP代码<br>count = 购买数量 | 
+| /b vip buy \<vipcode\> \<count\> sure | 确认购买VIP                                           | 
+| /b vip help                       | 展示帮助信息                                            | 
+| /b vip me                         | 查看我的VIP信息                                         | 
+| /b vip prefix <prefix>            | 设置我的称号                                            | 
+
 
 ### 管理
 

@@ -211,38 +211,14 @@ MCRMB平台层接口使用Get方式请求，使用Json格式进行回复。
 
 #### Data部分解释
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">&#x952E;&#x503C;</th>
-      <th style="text-align:left">&#x542B;&#x4E49;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">id</td>
-      <td style="text-align:left">&#x5361;&#x6E20;&#x9053;ID</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">name</td>
-      <td style="text-align:left">&#x5361;&#x6E20;&#x9053;&#x540D;&#x79F0;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">num</td>
-      <td style="text-align:left">&#x8BE5;&#x6E20;&#x9053;&#x5361;&#x53F7;&#x7684;&#x957F;&#x5EA6;&#x8981;&#x6C42;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">pwd</td>
-      <td style="text-align:left">&#x8BE5;&#x6E20;&#x9053;&#x5BC6;&#x7801;&#x7684;&#x957F;&#x5EA6;&#x8981;&#x6C42;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">rate</td>
-      <td style="text-align:left">
-        &#x672C;&#x670D;&#x52A1;&#x5668;&#x8BE5;&#x6E20;&#x9053;&#x53EF;&#x5151;&#x6362;&#x70B9;&#x5238;&#x7684;&#x6BD4;&#x4F8B;<br>100%&#x5219;&#x4E3A;1&#x5143;=1&#x70B9;&#x5238;&#x3002;
-      </td>
-    </tr>
-  </tbody>
-</table>
+| 键值   | 含义                               | 
+|:------|:----------------------------------| 
+| id   | 卡渠道ID                            | 
+| name | 卡渠道名称                            | 
+| num  | 该渠道卡号的长度要求                       | 
+| pwd  | 该渠道密码的长度要求                       | 
+| rate | 本服务器该渠道可兑换点券的比例<br>100%则为1元=1点券。 | 
+
 
 ### 手工加款扣款接口 Manual
 
@@ -250,30 +226,15 @@ MCRMB平台层接口使用Get方式请求，使用Json格式进行回复。
 
 #### 请求需要的额外参数
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">&#x53C2;&#x6570;</th>
-      <th style="text-align:left">&#x542B;&#x4E49;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">type</td>
-      <td style="text-align:left">
-        &#x64CD;&#x4F5C;&#x7C7B;&#x578B;<br>1=&#x52A0;&#x6B3E;<br>2=&#x6263;&#x6B3E;<br>3=&#x76F4;&#x63A5;&#x8BBE;&#x7F6E;&#x70B9;&#x5238;&#x4F59;&#x989D;
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">text</td>
-      <td style="text-align:left">&#x64CD;&#x4F5C;&#x8BF4;&#x660E;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">money</td>
-      <td style="text-align:left">&#x64CD;&#x4F5C;&#x91D1;&#x989D;&#xFF0C;&#x4E0D;&#x53EF;&#x8D1F;&#x6570;&#x3001;&#x5C0F;&#x6570;</td>
-    </tr>
-  </tbody>
-</table>#### 返回示例
+键值|含义
+:---|:---
+id|卡渠道ID
+name|卡渠道名称
+num|该渠道卡号的长度要求
+pwd|该渠道密码的长度要求
+rate|本服务器该渠道可兑换点券的比例<br>100%则为1元=1点券。
+
+#### 返回示例
 
 > {"code":"101","msg":"API接口加款操作成功","data":""}
 

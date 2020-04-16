@@ -27,42 +27,15 @@
 
 ### 参数值说明
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">&#x53C2;&#x6570;&#x540D;</th>
-      <th style="text-align:left">&#x8BF4;&#x660E;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">playername</td>
-      <td style="text-align:left">玩家名，大小写均可</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">point</td>
-      <td style="text-align:left">点卷数量，注意，请转成String类型</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">useto</td>
-      <td style="text-align:left">&#x6D88;&#x8D39;&#x8BF4;&#x660E;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">brocast</td>
-      <td style="text-align:left">&#x662F;&#x5426;&#x53D1;&#x516C;&#x5C4F;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">type</td>
-      <td style="text-align:left">
-        &#x624B;&#x5DE5;&#x64CD;&#x4F5C;&#x70B9;&#x5377;&#x7C7B;&#x578B;<br>1=&#x52A0;&#x6B3E;<br>2=&#x6263;&#x6B3E;<br>3=&#x91CD;&#x8BBE;&#x70B9;&#x5238;&#x91D1;&#x989D;
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">text</td>
-      <td style="text-align:left">&#x70B9;&#x5238;&#x64CD;&#x4F5C;&#x8BF4;&#x660E;</td>
-    </tr>
-  </tbody>
-</table>
+| 参数名        | 说明                                   | 
+|:-----------|:-------------------------------------| 
+| playername | 玩家名，大小写均可                            | 
+| point      | 点卷数量，注意，请转成String类型                  | 
+| useto      | 消费说明                                 | 
+| brocast    | 是否发公屏                                | 
+| type       | 手工操作点卷类型<br>1=加款<br>2=扣款<br>3=重设点券金额 | 
+| text       | 点券操作说明                               | 
+
 
 ### 参考代码
 
