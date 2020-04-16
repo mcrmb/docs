@@ -1,7 +1,7 @@
 # 关于MCRMB
 
 ## 平台简介
-
+![](.gitbook/assets/20200416231926.png ":size=400x240")  
 MCRMB是国内首个Minecraft充值解决方案平台，从2014年运营至今。  
 平台地址：[https://www.mcrmb.com](https://www.mcrmb.com/)
 
