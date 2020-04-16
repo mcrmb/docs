@@ -90,5 +90,7 @@ https://www.mcrmb.com/User/showReg
 * 游戏内提交卡密充值
   * 查询卡密类型： /b cz
   * 卡密： /b cz &lt;卡密类型&gt; &lt;卡号&gt; &lt;密码&gt;
+  
+![](.gitbook/assets/20200416231926.png)
 
 ?>充值完成后，输入/b money 可以转换点券到PlayerPoints账户中，该逻辑在玩家加入服务器时亦会执行一次，建议结合菜单插件把这些指令做成按钮。
