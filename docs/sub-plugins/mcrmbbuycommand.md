@@ -63,11 +63,11 @@
 
 （注意，本插件实际运用应结合其他可以【执行后台指令】的插件，而不是服主手工在后台打指令。）
 
-![](https://upimg.hiwbb.com/large/69605896gy1fsz1o1axnbj20qm0423yk)
+![](../.gitbook/assets/69605896gy1fsz1o1axnbj20qm0423yk.jpg)
 
 #### 前台效果
 
-![](https://upimg.hiwbb.com/large/69605896gy1fsz1mg3gknj20i80310t1)
+![](../.gitbook/assets/69605896gy1fsz1mg3gknj20i80310t1.jpg)
 
 
 
