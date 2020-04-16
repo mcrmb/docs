@@ -43,10 +43,7 @@
     <tr>
       <td style="text-align:left">type</td>
       <td style="text-align:left">
-        <p>&#x624B;&#x5DE5;&#x64CD;&#x4F5C;&#x70B9;&#x5377;&#x7C7B;&#x578B;</p>
-        <p>1=&#x52A0;&#x6B3E;</p>
-        <p>2=&#x6263;&#x6B3E;</p>
-        <p>3=&#x91CD;&#x8BBE;&#x70B9;&#x5238;&#x91D1;&#x989D;</p>
+        &#x624B;&#x5DE5;&#x64CD;&#x4F5C;&#x70B9;&#x5377;&#x7C7B;&#x578B;<br>1=&#x52A0;&#x6B3E;<br>2=&#x6263;&#x6B3E;<br>3=&#x91CD;&#x8BBE;&#x70B9;&#x5238;&#x91D1;&#x989D;
       </td>
     </tr>
     <tr>

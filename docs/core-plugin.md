@@ -50,8 +50,7 @@
       <td style="text-align:left">whitelist</td>
       <td style="text-align:left">int</td>
       <td style="text-align:left">
-        <p>&#x767D;&#x540D;&#x5355;&#x95E8;&#x69DB;&#x529F;&#x80FD;&#xFF0C;&#x82E5;&#x4E3A;0&#x5219;&#x7981;&#x7528;</p>
-        <p>&#x82E5;&#x5927;&#x4E8E;0&#xFF0C;&#x73A9;&#x5BB6;&#x9700;&#x8981;&#x6709;&#x8BE5;&#x6570;&#x503C;&#x7684;&#x70B9;&#x5238;&#x4F59;&#x989D;&#x65B9;&#x53EF;&#x8FDB;&#x670D;</p>
+        &#x767D;&#x540D;&#x5355;&#x95E8;&#x69DB;&#x529F;&#x80FD;&#xFF0C;&#x82E5;&#x4E3A;0&#x5219;&#x7981;&#x7528;<br>&#x82E5;&#x5927;&#x4E8E;0&#xFF0C;&#x73A9;&#x5BB6;&#x9700;&#x8981;&#x6709;&#x8BE5;&#x6570;&#x503C;&#x7684;&#x70B9;&#x5238;&#x4F59;&#x989D;&#x65B9;&#x53EF;&#x8FDB;&#x670D;
       </td>
     </tr>
     <tr>
@@ -73,8 +72,7 @@
       <td style="text-align:left">playerpoints</td>
       <td style="text-align:left">boolean</td>
       <td style="text-align:left">
-        <p>&#x8F6C;&#x5165;PlayerPoints&#x6A21;&#x5F0F;</p>
-        <p>&#x672C;&#x529F;&#x80FD;&#x5F00;&#x542F;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;MCRMB&#x7CFB;&#x5217;&#x5B50;&#x63D2;&#x4EF6;&#x4E0D;&#x53EF;&#x7528;&#x3002;&#x56E0;&#x4E3A;&#x70B9;&#x5238;&#x53EA;&#x5728;MCRMB&#x4E2D;&#x4E34;&#x65F6;&#x505C;&#x7559;&#xFF0C;&#x73A9;&#x5BB6;&#x8FDB;&#x670D;&#x6216;&#x5237;&#x65B0;&#x4F59;&#x989D;&#x65F6;&#xFF0C;&#x70B9;&#x5238;&#x5C06;&#x8F6C;&#x5165;<code>PlayerPoints</code>&#x63D2;&#x4EF6;</p>
+        &#x8F6C;&#x5165;PlayerPoints&#x6A21;&#x5F0F;<br>&#x672C;&#x529F;&#x80FD;&#x5F00;&#x542F;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;MCRMB&#x7CFB;&#x5217;&#x5B50;&#x63D2;&#x4EF6;&#x4E0D;&#x53EF;&#x7528;&#x3002;&#x56E0;&#x4E3A;&#x70B9;&#x5238;&#x53EA;&#x5728;MCRMB&#x4E2D;&#x4E34;&#x65F6;&#x505C;&#x7559;&#xFF0C;&#x73A9;&#x5BB6;&#x8FDB;&#x670D;&#x6216;&#x5237;&#x65B0;&#x4F59;&#x989D;&#x65F6;&#xFF0C;&#x70B9;&#x5238;&#x5C06;&#x8F6C;&#x5165;<code>PlayerPoints</code>&#x63D2;&#x4EF6;
       </td>
     </tr>
     <tr>
@@ -134,7 +132,7 @@
 | /b cx | 查询我的最后5个流水（充值+消费） |
 
 ?>玩家指令在 /b help 可以看到帮助，帮助内容可在config.yml文件中定义。
-##  **PlaceholderApi变量**
+##  PlaceholderApi变量
 
 | 变量 | 含义 |
 | :--- | :--- |
@@ -144,13 +142,13 @@
 
 ?>点券的**累计充值**目前已经可以选择**不统计手工加点**部分，服主可以到Mcmrb管理平台-&gt;服务器管理-&gt;服务器设置-&gt;手动加点计入累计选项，选择不计入。
 
-##  **ScoreboardStats变量**
+##  ScoreboardStats变量
 
 | 变量 | 含义 |
 | :--- | :--- |
 | %mcrmb% | 玩家的点券余额 |
 
-##  **InfoBoardReborn变量**
+##  InfoBoardReborn变量
 
 | 变量 | 含义 |
 | :--- | :--- |
@@ -158,7 +156,7 @@
 
 ## 插件接口及事件
 
-[go](/apis/core-plugin-api)
+[跳转查看](/apis/core-plugin-api)
 
 ## 默认Config.yml 
 

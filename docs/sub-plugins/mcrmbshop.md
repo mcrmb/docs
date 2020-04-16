@@ -21,9 +21,7 @@
     <tr>
       <td style="text-align:left">/b shop buy &lt;shopcode&gt; &lt;count&gt;</td>
       <td style="text-align:left">
-        <p>&#x4F7F;&#x7528;&#x6307;&#x4EE4;&#x8D2D;&#x4E70;&#x5546;&#x54C1;&#xFF08;&#x5C55;&#x793A;&#x6027;&#xFF09;</p>
-        <p>shopcode = &#x5546;&#x54C1;&#x4EE3;&#x7801;</p>
-        <p>count = &#x8D2D;&#x4E70;&#x6570;&#x91CF;</p>
+        &#x4F7F;&#x7528;&#x6307;&#x4EE4;&#x8D2D;&#x4E70;&#x5546;&#x54C1;&#xFF08;&#x5C55;&#x793A;&#x6027;&#xFF09;<br>shopcode = &#x5546;&#x54C1;&#x4EE3;&#x7801;<br>count = &#x8D2D;&#x4E70;&#x6570;&#x91CF;
       </td>
     </tr>
     <tr>
@@ -116,21 +114,14 @@ eco give testing 500
     <tr>
       <td style="text-align:left">permission</td>
       <td style="text-align:left">
-        <p>&#x8D2D;&#x4E70;&#x6B64;&#x5546;&#x54C1;&#x9700;&#x8981;&#x7684;&#x7279;&#x6B8A;&#x6743;&#x9650;&#x8282;&#x70B9;&#xFF0C;&#x5982;&quot;vip.yxb.100&quot;</p>
-        <p>&#x8BBE;&#x7F6E;&#x6B64;&#x9879;&#x540E;&#xFF0C;&#x7CFB;&#x7EDF;&#x5C06;&#x68C0;&#x6D4B;&#x73A9;&#x5BB6;&#x662F;&#x5426;&#x62E5;&#x6709;&#x6B64;&#x6743;&#x9650;&#x8282;&#x70B9;&#xFF0C;&#x6709;&#x624D;&#x53EF;&#x4EE5;&#x8D2D;&#x4E70;&#x6B64;&#x5546;&#x54C1;</p>
+        &#x8D2D;&#x4E70;&#x6B64;&#x5546;&#x54C1;&#x9700;&#x8981;&#x7684;&#x7279;&#x6B8A;&#x6743;&#x9650;&#x8282;&#x70B9;&#xFF0C;&#x5982;&quot;vip.yxb.100&quot;<br>&#x8BBE;&#x7F6E;&#x6B64;&#x9879;&#x540E;&#xFF0C;&#x7CFB;&#x7EDF;&#x5C06;&#x68C0;&#x6D4B;&#x73A9;&#x5BB6;&#x662F;&#x5426;&#x62E5;&#x6709;&#x6B64;&#x6743;&#x9650;&#x8282;&#x70B9;&#xFF0C;&#x6709;&#x624D;&#x53EF;&#x4EE5;&#x8D2D;&#x4E70;&#x6B64;&#x5546;&#x54C1;
       </td>
     </tr>
     <tr>
       <td style="text-align:left">cmd</td>
       <td style="text-align:left">
-        <p>&#x5546;&#x54C1;&#x5177;&#x4F53;&#x5185;&#x5BB9;&#x6307;&#x4EE4;&#x96C6;&#xFF0C;&#x4E3A;&#x6570;&#x7EC4;&#x5F62;&#x5F0F;&#x3002;</p>
-        <p>&#x5B9E;&#x4F8B;&#xFF1A;</p>
-        <p>- &apos;say &#x73A9;&#x5BB6;&#x3010;{player}&#x3011;&#x5728;&#x6B64;&#x795D;&#x5168;&#x670D;&#x670B;&#x53CB;&#x65B0;&#x5E74;&#x5FEB;&#x4E50;~!
-          &#x6211;&#x4E5F;&#x8981;&#x9001;:/bshop&apos;</p>
-        <p>- &apos;give {player} 322:1 1&apos;</p>
-        <p>- &apos;give {player} 264 20&apos;</p>
-        <p></p>
-        <p>&#x8BF7;&#x52A1;&#x5FC5;&#x6CE8;&#x610F;&#x7F29;&#x8FDB;&#x683C;&#x5F0F;&#x3002;&#x5EFA;&#x8BAE;&#x662F;&#x6839;&#x636E;&#x9ED8;&#x8BA4;config.yml&#x4E2D;&#x4FEE;&#x6539;&#xFF0C;&#x4E0D;&#x8981;&#x968F;&#x4FBF;&#x5220;&#x9664;&#x7A7A;&#x683C;&#x3002;</p>
+        &#x5546;&#x54C1;&#x5177;&#x4F53;&#x5185;&#x5BB9;&#x6307;&#x4EE4;&#x96C6;&#xFF0C;&#x4E3A;&#x6570;&#x7EC4;&#x5F62;&#x5F0F;&#x3002;<br>&#x5B9E;&#x4F8B;&#xFF1A;<br>- &apos;say &#x73A9;&#x5BB6;&#x3010;{player}&#x3011;&#x5728;&#x6B64;&#x795D;&#x5168;&#x670D;&#x670B;&#x53CB;&#x65B0;&#x5E74;&#x5FEB;&#x4E50;~!
+          &#x6211;&#x4E5F;&#x8981;&#x9001;:/bshop&apos;<br>- &apos;give {player} 322:1 1&apos;<br>- &apos;give {player} 264 20&apos;<br><br>&#x8BF7;&#x52A1;&#x5FC5;&#x6CE8;&#x610F;&#x7F29;&#x8FDB;&#x683C;&#x5F0F;&#x3002;&#x5EFA;&#x8BAE;&#x662F;&#x6839;&#x636E;&#x9ED8;&#x8BA4;config.yml&#x4E2D;&#x4FEE;&#x6539;&#xFF0C;&#x4E0D;&#x8981;&#x968F;&#x4FBF;&#x5220;&#x9664;&#x7A7A;&#x683C;&#x3002;
       </td>
     </tr>
   </tbody>

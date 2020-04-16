@@ -2,9 +2,8 @@
 
     * [关于MCRMB](README.md)
     * [快速部署MCRMB](fast.md)
-    * [核心插件使用说明](core-plugin.md)
-    * [平台历史更新记录](history.md)
-    * [原帮助文档(已废弃)](history-help.md)
+    * [核心插件说明书](core-plugin.md)
+    * [平台更新记录](history.md)
 
 * 接口文档
 
@@ -24,4 +23,5 @@
     * [插件下载站点](https://ci.mcrmb.com)
     * [玩家实名系统](https://v.mcrmb.com)
     * [平台合作商户协议](contract.md)
+    * [原帮助文档(已废弃)](history-help.md)
 

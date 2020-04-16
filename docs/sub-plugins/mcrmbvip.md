@@ -30,9 +30,7 @@
     <tr>
       <td style="text-align:left">/b vip buy &lt;vipcode&gt; &lt;count&gt;</td>
       <td style="text-align:left">
-        <p>&#x4F7F;&#x7528;&#x6307;&#x4EE4;&#x8D2D;&#x4E70;VIP&#xFF08;&#x5C55;&#x793A;&#x6027;&#xFF09;</p>
-        <p>vipcode = VIP&#x4EE3;&#x7801;</p>
-        <p>count = &#x8D2D;&#x4E70;&#x6570;&#x91CF;</p>
+        &#x4F7F;&#x7528;&#x6307;&#x4EE4;&#x8D2D;&#x4E70;VIP&#xFF08;&#x5C55;&#x793A;&#x6027;&#xFF09;<br>vipcode = VIP&#x4EE3;&#x7801;<br>count = &#x8D2D;&#x4E70;&#x6570;&#x91CF;
       </td>
     </tr>
     <tr>

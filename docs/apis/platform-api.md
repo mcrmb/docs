@@ -238,8 +238,7 @@ MCRMB平台层接口使用Get方式请求，使用Json格式进行回复。
     <tr>
       <td style="text-align:left">rate</td>
       <td style="text-align:left">
-        <p>&#x672C;&#x670D;&#x52A1;&#x5668;&#x8BE5;&#x6E20;&#x9053;&#x53EF;&#x5151;&#x6362;&#x70B9;&#x5238;&#x7684;&#x6BD4;&#x4F8B;</p>
-        <p>100%&#x5219;&#x4E3A;1&#x5143;=1&#x70B9;&#x5238;&#x3002;</p>
+        &#x672C;&#x670D;&#x52A1;&#x5668;&#x8BE5;&#x6E20;&#x9053;&#x53EF;&#x5151;&#x6362;&#x70B9;&#x5238;&#x7684;&#x6BD4;&#x4F8B;<br>100%&#x5219;&#x4E3A;1&#x5143;=1&#x70B9;&#x5238;&#x3002;
       </td>
     </tr>
   </tbody>
@@ -262,10 +261,7 @@ MCRMB平台层接口使用Get方式请求，使用Json格式进行回复。
     <tr>
       <td style="text-align:left">type</td>
       <td style="text-align:left">
-        <p>&#x64CD;&#x4F5C;&#x7C7B;&#x578B;</p>
-        <p>1=&#x52A0;&#x6B3E;</p>
-        <p>2=&#x6263;&#x6B3E;</p>
-        <p>3=&#x76F4;&#x63A5;&#x8BBE;&#x7F6E;&#x70B9;&#x5238;&#x4F59;&#x989D;</p>
+        &#x64CD;&#x4F5C;&#x7C7B;&#x578B;<br>1=&#x52A0;&#x6B3E;<br>2=&#x6263;&#x6B3E;<br>3=&#x76F4;&#x63A5;&#x8BBE;&#x7F6E;&#x70B9;&#x5238;&#x4F59;&#x989D;
       </td>
     </tr>
     <tr>

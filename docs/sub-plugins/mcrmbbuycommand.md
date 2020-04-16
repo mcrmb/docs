@@ -35,13 +35,8 @@
     <tr>
       <td style="text-align:left">&#x5546;&#x54C1;&#x547D;&#x4EE4;</td>
       <td style="text-align:left">
-        <p>&#x4F7F;&#x7528;&#x4E2D;&#x6587;&#x5206;&#x53F7;&#xFF1B;&#x5206;&#x5272;&#x7684;&#x591A;&#x4E2A;&#x9884;&#x8BBE;&#x6307;&#x4EE4;&#xFF0C;&#x5176;&#x4E2D;{player}&#x4E3A;&#x73A9;&#x5BB6;&#x540D;&#x53D8;&#x91CF;&#x3002;</p>
-        <p>&#x4EE5;op:&#x5F00;&#x5934;&#x7684;&#x6307;&#x4EE4;&#x5C06;&#x4E34;&#x65F6;&#x7ED9;&#x4E88;&#x73A9;&#x5BB6;&#x6743;&#x9650;&#x5E76;&#x7531;&#x73A9;&#x5BB6;&#x6267;&#x884C;&#x3002;</p>
-        <p></p>
-        <p>&#x4F8B;&#xFF1A;</p>
-        <p><code>op:say hi&#xFF1B;eco give {player} 100</code>
-        </p>
-        <p>&#x4EE5;&#x4E0A;&#x6307;&#x4EE4;&#xFF0C;&#x73A9;&#x5BB6;&#x5C06;&#x4EE5;OP&#x8EAB;&#x4EFD;&#x53D1;&#x5E03;&#x5168;&#x670D;&#x516C;&#x544A;&#x201C;hi&#x201D;&#xFF08;&#x7531;&#x73A9;&#x5BB6;&#x8EAB;&#x4EFD;&#x6267;&#x884C;&#xFF09;&#xFF0C;&#x5E76;&#x83B7;&#x5F97;100&#x4E2A;&#x91D1;&#x5E01;&#xFF08;&#x7531;&#x540E;&#x53F0;&#x6267;&#x884C;&#xFF09;</p>
+        &#x4F7F;&#x7528;&#x4E2D;&#x6587;&#x5206;&#x53F7;&#xFF1B;&#x5206;&#x5272;&#x7684;&#x591A;&#x4E2A;&#x9884;&#x8BBE;&#x6307;&#x4EE4;&#xFF0C;&#x5176;&#x4E2D;{player}&#x4E3A;&#x73A9;&#x5BB6;&#x540D;&#x53D8;&#x91CF;&#x3002;<br>&#x4EE5;op:&#x5F00;&#x5934;&#x7684;&#x6307;&#x4EE4;&#x5C06;&#x4E34;&#x65F6;&#x7ED9;&#x4E88;&#x73A9;&#x5BB6;&#x6743;&#x9650;&#x5E76;&#x7531;&#x73A9;&#x5BB6;&#x6267;&#x884C;&#x3002;<br><br>&#x4F8B;&#xFF1A;<br><code>op:say hi&#xFF1B;eco give {player} 100</code>
+        <br>&#x4EE5;&#x4E0A;&#x6307;&#x4EE4;&#xFF0C;&#x73A9;&#x5BB6;&#x5C06;&#x4EE5;OP&#x8EAB;&#x4EFD;&#x53D1;&#x5E03;&#x5168;&#x670D;&#x516C;&#x544A;&#x201C;hi&#x201D;&#xFF08;&#x7531;&#x73A9;&#x5BB6;&#x8EAB;&#x4EFD;&#x6267;&#x884C;&#xFF09;&#xFF0C;&#x5E76;&#x83B7;&#x5F97;100&#x4E2A;&#x91D1;&#x5E01;&#xFF08;&#x7531;&#x540E;&#x53F0;&#x6267;&#x884C;&#xFF09;
       </td>
     </tr>
   </tbody>
