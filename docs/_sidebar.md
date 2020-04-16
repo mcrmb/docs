@@ -13,11 +13,14 @@
 
 * 子插件说明文档
 
-    * [各插件最新版本下载](sub-plugins/downloads.md)
     * [McrmbBuyCommand](sub-plugins/mcrmbbuycommand.md)
     * [McrmbShop](sub-plugins/mcrmbshop.md)
     * [McrmbVip](sub-plugins/mcrmbvip.md)
     * [McrmbDraw](sub-plugins/mcrmbdraw.md)
+    * [各插件最新版直达](sub-plugins/downloads.md)
+    
+* 其他链接
+
     * [插件下载站点](https://ci.mcrmb.com)
     * [玩家实名系统](https://v.mcrmb.com)
     * [平台合作商户协议](contract.md)
