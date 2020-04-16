@@ -35,7 +35,10 @@ MCRMB是国内首个Minecraft充值解决方案平台，从2014年运营至今�
 
 ## 平台资质
 
-营业执照、[网络文化经营许可](http://sq.ccm.gov.cn/ccnt/sczr/service/business/emark/toDetail/bc72295cc6ab42d9af7b27927a8769c6)、[公安备机关案](http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44010602002006)、[ICP备案](http://www.beian.miit.gov.cn/)
+* 营业执照
+* [网络文化经营许可](http://sq.ccm.gov.cn/ccnt/sczr/service/business/emark/toDetail/bc72295cc6ab42d9af7b27927a8769c6)
+* [公安备机关案](http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44010602002006)
+* [ICP备案](http://www.beian.miit.gov.cn/)
 
 ## 资金安全
 
