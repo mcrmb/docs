@@ -6,51 +6,27 @@
 
 ## 指令
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">&#x6307;&#x4EE4;</th>
-      <th style="text-align:left">&#x8BF4;&#x660E;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">/b shop</td>
-      <td style="text-align:left">&#x67E5;&#x8BE2;&#x6240;&#x6709;&#x5546;&#x54C1;&#x4EE3;&#x7801;&#xFF0C;GUI&#x6A21;&#x5F0F;&#x76F4;&#x63A5;&#x51FA;GUI&#x9762;&#x677F;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">/b shop buy &lt;shopcode&gt; &lt;count&gt;</td>
-      <td style="text-align:left">
-        &#x4F7F;&#x7528;&#x6307;&#x4EE4;&#x8D2D;&#x4E70;&#x5546;&#x54C1;&#xFF08;&#x5C55;&#x793A;&#x6027;&#xFF09;<br>shopcode = &#x5546;&#x54C1;&#x4EE3;&#x7801;<br>count = &#x8D2D;&#x4E70;&#x6570;&#x91CF;
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">/b shop buy &lt;shopcode&gt; &lt;count&gt; sure</td>
-      <td style="text-align:left">&#x786E;&#x8BA4;&#x8D2D;&#x4E70;&#x5546;&#x54C1;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">/b shop help</td>
-      <td style="text-align:left">&#x5C55;&#x793A;&#x5E2E;&#x52A9;&#x4FE1;&#x606F;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">/b shop reload</td>
-      <td style="text-align:left">&#x91CD;&#x8F7D;&#x63D2;&#x4EF6;&#xFF08;&#x7BA1;&#x7406;&#x5458;&#x53EF;&#x7528;&#xFF09;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">/b shop del &lt;shopcode&gt;</td>
-      <td style="text-align:left">&#x4E0B;&#x67B6;&#x5546;&#x54C1;</td>
-    </tr>
-  </tbody>
-</table>## 商品的本质
 
-商品在本插件中均为指令，例如你需要给玩家发钻石，则准备好这样的指令 `give player diamond 1`，需要给玩家加金币，则准备好类似这样的指令 `eco give player 100`
+|指令|说明|
+|:---|:---|
+|/b shop|查询所有商品代码，GUI模式直接出GUI面板|
+|/b shop buy \<shopcode\> \<count\>|使用指令购买商品（展示性）<br>shopcode = 商品代码<br>count = 购买数量|
+|/b shop buy \<shopcode\> \<count\> sure|确认购买商品|
+|/b shop help|展示帮助信息|
+|/b shop reload|重载插件（管理员可用）|
+|/b shop del \<shopcode\>|下架商品|
+
+
+## 商品的本质
+商品在本插件中均需要为指令可发送的内容：  
+例如你需要给玩家发钻石，则准备好这样的指令 `give player diamond 1`  
+需要给玩家加金币，则准备好类似这样的指令 `eco give player 100`  
 
 ## 定义商品指令\(cmd\)
 
 config.yml文件中，`cmd`为发放商品的指令模板，其中有两个变量可以使用  
-`{player}` 将在最终执行时被替换为玩家名。  
-`{sum}` 将在最终执行是被替换为总数量。  
-指令后的 `|||` 之后的数值，代表基数。用于计算出最终的总数量。  基数\*购买份数 = 总数量
+`{player}` 将在最终执行时被替换为玩家名， `{sum}` 将在最终执行是被替换为总数量。  
+指令后的 `|||` 之后的数值，代表基数。用于计算出最终的总数量，  `基数\*购买份数` = `总数量`。
 
 ?>例如定义cmd内容为：  eco give {player} {sum}\|\|\|100  
 玩家 testing 购买该商品5份，则最终将生成的指令为：  
@@ -58,70 +34,70 @@ eco give testing 500
   
 这个500的计算来源是 基数\(100\)\*购买份数\(5\) = 500  
 所以这个商品的名字，可以叫做“100金币”
-## 商品定义中的其他参数
+## 商品定义中的其他参数 
 
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">&#x53C2;&#x6570;</th>
-      <th style="text-align:left">&#x542B;&#x4E49;</th>
+      <th style="text-align:left">参数</th>
+      <th style="text-align:left">含义</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td style="text-align:left">name</td>
-      <td style="text-align:left">&#x5546;&#x54C1;&#x540D;&#x5B57;</td>
+      <td style="text-align:left">商品名字</td>
     </tr>
     <tr>
       <td style="text-align:left">text</td>
-      <td style="text-align:left">&#x5546;&#x54C1;&#x8BF4;&#x660E;</td>
+      <td style="text-align:left">商品说明</td>
     </tr>
     <tr>
       <td style="text-align:left">price</td>
-      <td style="text-align:left">&#x5546;&#x54C1;&#x4EF7;&#x683C;</td>
+      <td style="text-align:left">商品价格</td>
     </tr>
     <tr>
       <td style="text-align:left">min</td>
-      <td style="text-align:left">&#x5355;&#x6B21;&#x8D2D;&#x4E70;&#x4E0B;&#x9650;&#xFF0C;0&#x5219;&#x4E0D;&#x9650;</td>
+      <td style="text-align:left">单次购买下限，0则不限</td>
     </tr>
     <tr>
       <td style="text-align:left">max</td>
-      <td style="text-align:left">&#x5355;&#x6B21;&#x8D2D;&#x4E70;&#x4E0A;&#x9650;&#xFF0C;0&#x5219;&#x4E0D;&#x9650;</td>
+      <td style="text-align:left">单次购买上限，0则不限</td>
     </tr>
     <tr>
       <td style="text-align:left">count</td>
-      <td style="text-align:left">&#x7269;&#x54C1;&#x603B;&#x6570;&#x91CF;&#xFF0C;0&#x5219;&#x4E0D;&#x9650;</td>
+      <td style="text-align:left">物品总数量，0则不限</td>
     </tr>
     <tr>
       <td style="text-align:left">quantity</td>
-      <td style="text-align:left">&#x6BCF;&#x73A9;&#x5BB6;&#x9650;&#x8D2D;&#x6570;&#x91CF;&#xFF0C;0&#x5219;&#x4E0D;&#x9650;</td>
+      <td style="text-align:left">每玩家限购数量，0则不限</td>
     </tr>
     <tr>
       <td style="text-align:left">brocast</td>
-      <td style="text-align:left">&#x8D2D;&#x4E70;&#x540E;&#x662F;&#x5426;&#x5168;&#x670D;&#x516C;&#x544A;&#x8D2D;&#x4E70;</td>
+      <td style="text-align:left">购买后是否全服公告购买</td>
     </tr>
     <tr>
       <td style="text-align:left">itemid</td>
-      <td style="text-align:left">GUI &#x7269;&#x54C1;ID&#x503C;</td>
+      <td style="text-align:left">GUI 物品ID值</td>
     </tr>
     <tr>
       <td style="text-align:left">slot</td>
-      <td style="text-align:left">&#x5728;&#x9762;&#x677F;&#x4E0A;&#x7684;Slot&#x4F4D;&#x7F6E;&#xFF0C;&#x5982;&#xFF1A;0,1,2&#xFF0C;
+      <td style="text-align:left">在面板上的Slot位置，如：0,1,2，
         <br
-        />&#x9762;&#x677F;&#x6BCF;&#x884C;&#x6709;&#x4E5D;&#x4E2A;&#x4F4D;&#x7F6E;&#xFF0C;
-        &#x7B2C;&#x4E00;&#x884C;&#x662F;0-8&#xFF0C;&#x7B2C;&#x4E8C;&#x884C;&#x662F;9-17&#xFF0C;&#x4EE5;&#x6B64;&#x7C7B;&#x63A8;</td>
+        />面板每行有九个位置，
+        第一行是0-8，第二行是9-17，以此类推</td>
     </tr>
     <tr>
       <td style="text-align:left">permission</td>
       <td style="text-align:left">
-        &#x8D2D;&#x4E70;&#x6B64;&#x5546;&#x54C1;&#x9700;&#x8981;&#x7684;&#x7279;&#x6B8A;&#x6743;&#x9650;&#x8282;&#x70B9;&#xFF0C;&#x5982;&quot;vip.yxb.100&quot;<br>&#x8BBE;&#x7F6E;&#x6B64;&#x9879;&#x540E;&#xFF0C;&#x7CFB;&#x7EDF;&#x5C06;&#x68C0;&#x6D4B;&#x73A9;&#x5BB6;&#x662F;&#x5426;&#x62E5;&#x6709;&#x6B64;&#x6743;&#x9650;&#x8282;&#x70B9;&#xFF0C;&#x6709;&#x624D;&#x53EF;&#x4EE5;&#x8D2D;&#x4E70;&#x6B64;&#x5546;&#x54C1;
+        购买此商品需要的特殊权限节点，如&quot;vip.yxb.100&quot;<br>设置此项后，系统将检测玩家是否拥有此权限节点，有才可以购买此商品
       </td>
     </tr>
     <tr>
       <td style="text-align:left">cmd</td>
       <td style="text-align:left">
-        &#x5546;&#x54C1;&#x5177;&#x4F53;&#x5185;&#x5BB9;&#x6307;&#x4EE4;&#x96C6;&#xFF0C;&#x4E3A;&#x6570;&#x7EC4;&#x5F62;&#x5F0F;&#x3002;<br>&#x5B9E;&#x4F8B;&#xFF1A;<br>- &apos;say &#x73A9;&#x5BB6;&#x3010;{player}&#x3011;&#x5728;&#x6B64;&#x795D;&#x5168;&#x670D;&#x670B;&#x53CB;&#x65B0;&#x5E74;&#x5FEB;&#x4E50;~!
-          &#x6211;&#x4E5F;&#x8981;&#x9001;:/bshop&apos;<br>- &apos;give {player} 322:1 1&apos;<br>- &apos;give {player} 264 20&apos;<br><br>&#x8BF7;&#x52A1;&#x5FC5;&#x6CE8;&#x610F;&#x7F29;&#x8FDB;&#x683C;&#x5F0F;&#x3002;&#x5EFA;&#x8BAE;&#x662F;&#x6839;&#x636E;&#x9ED8;&#x8BA4;config.yml&#x4E2D;&#x4FEE;&#x6539;&#xFF0C;&#x4E0D;&#x8981;&#x968F;&#x4FBF;&#x5220;&#x9664;&#x7A7A;&#x683C;&#x3002;
+        商品具体内容指令集，为数组形式。<br>实例：<br>- 'say 玩家【{player}】在此祝全服朋友新年快乐~!
+          我也要送:/bshop'<br>- 'give {player} 322:1 1'<br>- 'give {player} 264 20'<br><br>请务必注意缩进格式。建议是根据默认config.yml中修改，不要随便删除空格。
       </td>
     </tr>
   </tbody>
