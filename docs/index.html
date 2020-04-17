@@ -18,9 +18,6 @@
 
 </head>
 <body>
-<script>
-  var _hmt = _hmt || [];
-</script>
   <div id="app"></div>
   <script>
     window.$docsify = {
@@ -48,15 +45,7 @@
         buttonText : '复制内容',
         errorText  : '复制错误',
         successText: '已复制'
-      },
-      plugins: [
-        function(hook, vm) {
-          hook.doneEach(function() {
-            // Called after initial completion, no arguments.
-            console.log("/"+window.location.hash);
-            window._hmt.push(['_trackPageview', "/"+window.location.hash])
-          });
-        }]
+      }
     }
   </script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
