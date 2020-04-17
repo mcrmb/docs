@@ -59,6 +59,8 @@
 
   <script>
     var _hmt = _hmt || [];
+    _hmt.push(['_setAutoPageview', false]);
+    _hmt.push(["_trackPageview","/"+window.location.hash]);
     _hmt.push(['_requirePlugin', 'UrlChangeTracker', {
       shouldTrackUrlChange: function (newPath, oldPath) {
         return newPath && oldPath;
