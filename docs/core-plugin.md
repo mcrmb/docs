@@ -22,8 +22,10 @@
 | cache_timeout | int | 缓存超时时间 |
 | whitelist | int | 白名单门槛功能，若为0则禁用<br>若大于0，玩家需要有该数值的点券余额方可进服 |
 | op_modify | boolean | OP是否可以操作玩家点券 |
-| qrpay_ingame | boolean | 是否开启游戏内扫码支付 |
-| qrpay_compatible | boolean | 游戏内扫码支付兼容模式 |
+| qrpay_ingame | boolean | `2.0b11` 是否开启游戏内扫码支付  |
+| qrpay_compatible | boolean | `2.0b12` 游戏内扫码支付兼容模式 |
+| qrpay_empty_hand | boolean | `2.0b13` 是否必须空手情况下才可发起扫码支付 |
+| qrpay_limit_sec | int | `2.0b13` 扫码支付状态最长可以持续几秒？0为不限制。 |
 | playerpoints | boolean | 转入PlayerPoints模式<br>本功能开启情况下，MCRMB系列子插件不可用。因为点券只在MCRMB中临时停留，玩家进服或刷新余额时，点券将转入`PlayerPoints`插件 |
 | command | string | 指令内容，请勿随意修改! 若修改必须同时修改 plugin.yml 文件。 |
 | point | string | 单位名称（点券、钻石、元宝等） |
@@ -42,7 +44,10 @@
 | /b take &lt;player&gt; &lt;points&gt; | 减少玩家点券余额\(云平台\) |
 | /b set &lt;player&gt; &lt;points&gt; | 重设玩家点券余额\(云平台\) |
 | /b test \[url\] | 测试网络连通性，URL可选 |
-| /b clearcache | 清理玩家本地点券缓存\(谨慎操作\) |
+| /b clearcache | `2.0b6` 清理玩家本地点券缓存\(谨慎操作\) |
+| /b clearmap \[player\] | `2.0b13` 清理玩家背包中残留的地图（不指定则清理所有在线玩家） |
+| /b cancel \[player\] | `2.0b13` 强行退出玩家的支付状态 |
+| /b cancelall | `2.0b13` 强行退出所有在线玩家的支付状态 |
 | /b debug | 开启调试模式 |
 
 ?>/b give /b take /b set 3个指令，均为修改云平台的点券余额。因此，如果您的服务器是转入PlayerPoints模式，这3个指令没有意义，需要增加玩家本地点券时，直接使用PlayerPoints的增加点券指令即可。
@@ -93,7 +98,7 @@
 ## 默认Config.yml 
 
 ```yaml
-## MCRMB插件配置文件，该文件生成于版本：2.0b12
+## MCRMB插件配置文件，该文件生成于版本：2.0b13
 
 ## 服务器信息，请先注册平台，然后从充值平台接口获取。可使用/b setup <sid> <key> 指令快捷设置。自动配置后本文件的中文提示会消失，请留意！
 sid: 'Your SID'
@@ -120,11 +125,17 @@ whitelist: 0
 ##  本服是否开启管理员修改玩家点券
 op_modify: false
 
-##  是否开启内置二维码支付
+##  是否开启内置二维码支付   2.0b11
 qrpay_ingame: true
 
-##  是否开启二维码兼容MOD服模式，如果发现二维码无法展示，可以尝试开启。
+##  是否开启二维码兼容MOD服模式，如果发现二维码无法展示，可以尝试开启。  2.0b12
 qrpay_compatible: false
+
+##  是否强制空手状态下才可以发起支付，如果发现充值结束时物品会丢失，安全起见可以开启这个。  2.0b13
+qrpay_empty_hand: false
+
+##  玩家可以打开二维码的时间限制，单位为秒，0则不限制   2.0b13
+qrpay_limit_sec: 0
 
 # 是否自动转换为PlayerPoints点券?
 ## 启用该模式后：玩家在进服时触发mcrmb点券余额查询,并自动扣除,加到PlayerPoints账户中. 玩家输入/b money也可以转换余额到PlayerPoints.
