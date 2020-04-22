@@ -221,11 +221,11 @@ Add 新增QQ支付扫码，游戏内可以利用地图扫码支付。指令：/b
 Fix 地图扫码功能支持更多版本，当前已测试的版本支持 1.7.* 至 1.15.*  
 Add 地图扫码加入图标
 
-### V2.0b2 #68   #特别鸣谢2821258414测试提出  
+### V2.0b2 #68
 Fix 修正com.mcrmb.Mcrmb.balances无法外部访问的问题  
 Fix 修正com.mcrmb.Mcrmb.debugMode无法外部访问的问题  
 
-### V2  .0b1 #63    #该版本为测试版.若使用异常请退回  
+### V2  .0b1 #63
 Add 新增微信支付扫码功能，游戏内可以利用地图扫码支付。指令：/b wx <金额>  
 Add 新增PlayerPoints挂钩及转入模式，该模式下，玩家查mcrmb余额或入服时，将自动把点券余额转为PlayerPoints余额。   
 Fix 指令整理，去除/b admin * 等指令，具体管理指令可在/b admin或/b status中查看。  
@@ -233,6 +233,9 @@ Fix /b setup 将不会影响config文件注释内容，也不会将中文变为�
 Fix /b test 部分加入一个https测试项，去除两个没有意义的附加测试。  
 Fix 优化logapi功能，将展示更多的api接口信息便于排查问题。  
 Fix 插件不再区分UTF-8或GBK，内部强制为UTF-8，兼容老版本GBK格式。  
+
+### 更往前的历史记录
+[请移步CI](https://ci.mcrmb.com/job/MCRMB/)
 
 注意：若有任何问题，请截图发邮件至702048@qq.com
 
