@@ -50,9 +50,10 @@
 | /b cancelall | `2.0b13` 强行退出所有在线玩家的支付状态 |
 | /b debug | 开启调试模式 |
 
-?>/b give /b take /b set 3个指令，均为修改云平台的点券余额。因此，如果您的服务器是转入PlayerPoints模式，这3个指令没有意义，需要增加玩家本地点券时，直接使用PlayerPoints的增加点券指令即可。
+?>`/b give /b take /b set` 3个指令，均为修改云平台的点券余额。  
+因此，如果您的服务器是转入PlayerPoints模式，这3个指令没有意义，需要增加玩家本地点券时，直接使用PlayerPoints的增加点券指令即可。  
+`/b debug `指令为调试指令，开启之后，所有MCRMB网络请求会展示调用堆栈以及是否在主线程。可以根据其中的信息，判断是什么插件调用了Mcrmb以及是否会造成网络卡服。
 
-/b debug 指令为调试指令，开启之后，所有MCRMB网络请求会展示调用堆栈以及是否在主线程。可以根据其中的信息，判断是什么插件调用了Mcrmb以及是否会造成网络卡服。
 ## 玩家指令
 
 | 指令 | 作用 |
@@ -165,7 +166,74 @@ help:  '
 &e=================================================================='
 ```
 
+## 插件下载
+[跳转查看](/sub-plugins/downloads)
 
 
+## 插件更新说明
+
+版本号后的#为http://ci.mcrmb.com 的构建序号~
+
+### V2.0b13 #82
+Add `/b cancel <玩家名>` 取消指定玩家的二维码支付状态  
+Add `/b cancelall` 取消所有在线玩家的二维码支付状态  
+Add `/b clearmap [玩家名]`  清理指定玩家或所有在线玩家背包中残留的二维码地图  
+Add `qrpay_limit_sec` 选项，可以限制玩家二维码支付状态持续的时间，单位为秒，0为不限制，超时后自动退出支付状态  
+Add `qrpay_empty_hand` 选择，可以限制玩家进入二维码支付状态时是否必须空手，true/false
+Fix 修正物品保护插件导致的退出支付状态后地图又回到玩家手上问题  
+
+
+### V2.0b12 #81  
+Add 扫码功能增加对CatServer及KCauldron的支持，其他MOD服如果有无法展示二维码的情况，尝试打开config.yml中的开关【qrpay_compatible: true】  
+Fix 优化二维码Render的逻辑；  
+
+### V2.0b11 #80  
+Fix 完善游戏内扫码功能开关，可选择关闭。默认是开启状态【qrpay_ingame: true】  
+
+### V2.0b10 #79  
+Fix 修正Manual中的缓存调用报错问题，PlayerPoints转入模式高发  
+
+### V2.0b9 #78  
+Fix 修正事件触发到异步逻辑中 (使用配套PlayerPoints插件，能正常扣款但无法发放物品的请升级此版本)  
+
+### V2.0b8 #77  
+Add 增加一个玩家指令：/b cancel 用于强制退出扫码状态；  
+Fix 改进扫码充值逻辑到异步，扫码充值逻辑统一到单类；  
+Add 测试类新增，启动插件时若异常则启动测试；  
+Add /b debug 模式下网络请求输出加上主线程判断；  
+Add 加入公告、版本读取；  
+Fix 插件启动信息样式优化；  
+Add config.yml文件加入插件版本号；  
+
+### V2.0b6 #75  
+Add 新增PAPI变量【累计充值】：%mcrmb_recharge%  
+Add 新增PAPI变量【累计消费】：%mcrmb_consume%  
+Fix 重做插件的余额、累计充值、累计消费缓存，所以升级该版本需要同时升级魔改版的 PlayerPoints/InfoBroad；  
+Add 增加指令/b clearcache 用于清理上述缓存（测试）  
+
+### V2.0b5 #72  
+Add 新增支付宝支付扫码，游戏内可以利用地图扫码支付。指令：/b zfb <金额>  
+
+### V2.0b4 #71  
+Add 新增QQ支付扫码，游戏内可以利用地图扫码支付。指令：/b qq <金额>  
+
+### V2.0b3 #70  
+Fix 地图扫码功能支持更多版本，当前已测试的版本支持 1.7.* 至 1.15.*  
+Add 地图扫码加入图标
+
+### V2.0b2 #68   #特别鸣谢2821258414测试提出  
+Fix 修正com.mcrmb.Mcrmb.balances无法外部访问的问题  
+Fix 修正com.mcrmb.Mcrmb.debugMode无法外部访问的问题  
+
+### V2  .0b1 #63    #该版本为测试版.若使用异常请退回  
+Add 新增微信支付扫码功能，游戏内可以利用地图扫码支付。指令：/b wx <金额>  
+Add 新增PlayerPoints挂钩及转入模式，该模式下，玩家查mcrmb余额或入服时，将自动把点券余额转为PlayerPoints余额。   
+Fix 指令整理，去除/b admin * 等指令，具体管理指令可在/b admin或/b status中查看。  
+Fix /b setup 将不会影响config文件注释内容，也不会将中文变为乱码，方便服主配置，旧版插件建议可以删掉config.yml文件重新配置一次。  
+Fix /b test 部分加入一个https测试项，去除两个没有意义的附加测试。  
+Fix 优化logapi功能，将展示更多的api接口信息便于排查问题。  
+Fix 插件不再区分UTF-8或GBK，内部强制为UTF-8，兼容老版本GBK格式。  
+
+注意：若有任何问题，请截图发邮件至702048@qq.com
 
 
