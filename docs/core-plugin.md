@@ -26,7 +26,10 @@
 | qrpay_compatible | boolean | `2.0b12` 游戏内扫码支付兼容模式 |
 | qrpay_empty_hand | boolean | `2.0b13` 是否必须空手情况下才可发起扫码支付 |
 | qrpay_limit_sec | int | `2.0b13` 扫码支付状态最长可以持续几秒？0为不限制。 |
+| qrpay_limit_one_payer | boolean | `2.0b16` 是否限制只能有一个玩家在扫码状态中。 |
+| bmoney_after_exit_qrpay | boolean | `2.0b16` 玩家按Q退出充值后是否要自动执行一次/b money查询余额 |
 | playerpoints | boolean | 转入PlayerPoints模式<br>本功能开启情况下，MCRMB系列子插件不可用。因为点券只在MCRMB中临时停留，玩家进服或刷新余额时，点券将转入`PlayerPoints`插件 |
+| playerpoints_check_on_join_server | boolean | `2.0b16` 转入PlayerPoints模式下，玩家进服时是否查询点券余额转入PlayerPoints |
 | command | string | 指令内容，请勿随意修改! 若修改必须同时修改 plugin.yml 文件。 |
 | point | string | 单位名称（点券、钻石、元宝等） |
 | prefix | string | 提示前缀 |
@@ -99,12 +102,12 @@
 ## 默认Config.yml 
 
 ```yaml
-## MCRMB插件配置文件，该文件生成于版本：2.0b13
+## MCRMB插件配置文件，该文件生成于版本：2.0b16
 
 ## 服务器信息，请先注册平台，然后从充值平台接口获取。可使用/b setup <sid> <key> 指令快捷设置。自动配置后本文件的中文提示会消失，请留意！
-sid: 'Your SID'
+sid: 'Your_SID'
 ## SID如何获取？  进入www.mcrmb.com =》我的服务器 =》“编号”就是sid，必须填对
-key: 'Your KEY'
+key: 'Your_KEY'
 ## KEY如何获取？  进入www.mcrmb.com =》我的服务器 =》 “密钥”就是key，必须填对
 
 ## 是否记录api接口? 如果希望查看插件与平台的请求情况，请打开！
@@ -126,23 +129,35 @@ whitelist: 0
 ##  本服是否开启管理员修改玩家点券
 op_modify: false
 
-##  是否开启内置二维码支付   2.0b11
+##  是否开启内置二维码支付   Ver: 2.0b11
 qrpay_ingame: true
 
-##  是否开启二维码兼容MOD服模式，如果发现二维码无法展示，可以尝试开启。  2.0b12
+##  是否开启二维码兼容MOD服模式，如果发现二维码无法展示，可以尝试开启，KCauldron等服务端高发。  Ver: 2.0b12
 qrpay_compatible: false
 
-##  是否强制空手状态下才可以发起支付，如果发现充值结束时物品会丢失，安全起见可以开启这个。  2.0b13
+##  是否限制同时只能1个人进行支付，Catserver部分版本及KCauldron等服务端可能出现地图源所有玩家都为同一个的问题，这种情况下，如果有两个玩家在请求二维码，后操作的玩家的支付二维码会覆盖前面的玩家的。此时应打开此功能。  Ver: 2.0b16
+qrpay_limit_one_payer: false
+
+##  是否强制空手状态下才可以发起支付，如果发现充值结束时物品会丢失，安全起见可以开启这个。  Ver: 2.0b13
 qrpay_empty_hand: false
 
-##  玩家可以打开二维码的时间限制，单位为秒，0则不限制   2.0b13
+##  玩家可以维持二维码扫码状态的时间限制，单位为秒，0则不限制。超过这个时间之后，会被强行退出支付状态。   Ver: 2.0b13
 qrpay_limit_sec: 0
+
+##  玩家退出二维码充值之后，自动执行一次/b money   Ver:2.0b16
+bmoney_after_exit_qrpay: false
+
+
 
 # 是否自动转换为PlayerPoints点券?
 ## 启用该模式后：玩家在进服时触发mcrmb点券余额查询,并自动扣除,加到PlayerPoints账户中. 玩家输入/b money也可以转换余额到PlayerPoints.
 ## 该模式下, b give指令增加的是玩家mcrmb点券余额, 如果想要增加PlayerPoints余额请直接操作PlayerPoints指令.
-## 该模式下, McrmbShop / McrmbVip / McrmbDraw / McrmbBuyCommand 插件均不再可用. 请使用与PlayerPoints配套的插件.
+## 该模式下, McrmbShop / McrmbVip / McrmbDraw / McrmbBuyCommand 插件均不再可用. 请使用与PlayerPoints配套的插件.   Ver： 2.0b2
 playerpoints: false
+
+# 玩家加入服务器时检查是否有点券余额可以转换，如果你的服务器没有使用BungeeCord，可能会在没登录的时候就已经开始转换，这种情况，请将这里设置为false。  Ver： 2.0b16
+playerpoints_check_on_join_server: true
+
 
 
 ##  指令单词，请勿随意修改! 若修改必须同时修改 plugin.yml 文件。 本指令将影响所有Mcrmb子插件如/b shop 和 /b vip
@@ -175,10 +190,10 @@ help:  '
 版本号后的#为http://ci.mcrmb.com 的构建序号~
 
 ### V2.0b16 #86 
-Add `qrpay_limit_one_payer`选项，限制同一时间只能有一个玩家可进入二维码状态。因KC等MOD服务端地图所有玩家使用同一对象，导致玩家A充值时二维码会被进入充值状态的玩家B的支付二维码覆盖，建议KC端开启，Catserver端最新版不存在此问题，旧版存在此问题，需要将此项设为 `true`。  
-Add `bmoney_after_exit_qrpay`选项，是否在玩家二维码支付状态下按Q退出后自动执行一次/b money展示最新余额，`true` or `false`。  
-Add `playerpoints_check_on_join_server`选项，点券转换为PlayerPoints模式下，默认玩家入服即开始转换，由于部分服务器非群组服，可能出现玩家未登陆就在转换的提示，这种情况下，请将此项设置为 `false`。  
-Fix 将兼容模式的KC、Catserver判断去除，请更新此版本的服主务必自行检查二维码是否能正常生成展示，如不能则需要打开 `qrpay_compatible`，上一版本中此开关在Kc、Catserver下会自动打开。因同类服务端不同版本兼容问题存在情况不一样，现不再做服务端判断。   
+Add `qrpay_limit_one_payer`选项，限制同一时间只能有一个玩家可进入二维码状态。因KC等MOD服务端地图所有玩家使用同一对象，导致玩家A充值时二维码会被进入充值状态的玩家B的支付二维码覆盖，建议KC端开启，Catserver端最新版不存在此问题，旧版存在此问题，需要将此项设为 `true`。<br>
+Add `bmoney_after_exit_qrpay`选项，是否在玩家二维码支付状态下按Q退出后自动执行一次/b money展示最新余额，`true` or `false`。<br>
+Add `playerpoints_check_on_join_server`选项，点券转换为PlayerPoints模式下，默认玩家入服即开始转换，由于部分服务器非群组服，可能出现玩家未登陆就在转换的提示，这种情况下，请将此项设置为 `false`。<br>
+Fix 将兼容模式的KC、Catserver判断去除，请更新此版本的服主务必自行检查二维码是否能正常生成展示，如不能则需要打开 `qrpay_compatible`，上一版本中此开关在Kc、Catserver下会自动打开。因同类服务端不同版本兼容问题存在情况不一样，现不再做服务端判断。<br> 
 Fix 完善二维码支付Render逻辑。
 
 ### V2.0b15 #85
