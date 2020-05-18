@@ -174,6 +174,13 @@ help:  '
 
 版本号后的#为http://ci.mcrmb.com 的构建序号~
 
+### V2.0b16 #86 
+Add `qrpay_limit_one_payer`选项，限制同一时间只能有一个玩家可进入二维码状态。因KC等MOD服务端地图所有玩家使用同一对象，导致玩家A充值时二维码会被进入充值状态的玩家B的支付二维码覆盖，建议KC端开启，Catserver端最新版不存在此问题，旧版存在此问题，需要将此项设为 `true`。  
+Add `bmoney_after_exit_qrpay`选项，是否在玩家二维码支付状态下按Q退出后自动执行一次/b money展示最新余额，`true` or `false`。  
+Add `playerpoints_check_on_join_server`选项，点券转换为PlayerPoints模式下，默认玩家入服即开始转换，由于部分服务器非群组服，可能出现玩家未登陆就在转换的提示，这种情况下，请将此项设置为 `false`。  
+Fix 将兼容模式的KC、Catserver判断去除，请更新此版本的服主务必自行检查二维码是否能正常生成展示，如不能则需要打开 `qrpay_compatible`，上一版本中此开关在Kc、Catserver下会自动打开。因同类服务端不同版本兼容问题存在情况不一样，现不再做服务端判断。   
+Fix 完善二维码支付Render逻辑。
+
 ### V2.0b15 #85
 Fix 修正判断服主未设置SID和KEY的逻辑。
 
