@@ -34,6 +34,11 @@
 | point | string | 单位名称（点券、钻石、元宝等） |
 | prefix | string | 提示前缀 |
 | help | string | 玩家帮助信息 |
+| transfer_mode | boolean | `2.0b17` 是否开启自定义指令转入功能，该模式可自定义指令实现玩家查询、登录及充值到账时自动转入点券到服务器（自定义指令方式），优先于playerpoints模式。 |
+| transfer_mode_cmds | list | `2.0b17` 定义转入功能指令集，其中`{player}`将自动替换为目标玩家，`{points}`将自动替换为可转换点券余额<br>默认 config.yml 示例:：<br> `- "p give {player} {points}"` 后台模式执行<br> `- "op:say 我充值了 {points} 点券! (测试,正式使用请删除)" ` 指令前加"op:"： 玩家以临时OP权限执行<br>`- "p:msg {player} 我充值了{points} 点券! (测试,正式使用请删除)"` 指令前加"p:"： 玩家执行|
+| transfer_mode_on_join_server | boolean | `2.0b17` 自定义转入模式下，玩家进服时是否查询点券并执行逻辑 |
+| separator | string | `2.0b17` 自定义分隔符，可使用颜色代码 `&` 或 `§` |
+
 
 ## 管理指令
 
@@ -42,7 +47,7 @@
 | /b setup &lt;sid&gt; &lt;key&gt; | 配置sid与key |
 | /b status | 查看插件综合状态，/b admin 也可以 |
 | /b reload | 重载核心插件 |
-| /b money &lt;player&gt; | 查询玩家点券余额 |
+| /b money &lt;player&gt; | 查询玩家点券余额<br> 如果有转入PlayerPoints模式 `playerpoints` 或自定义指令转入模式 `transfer_mode` 启用时，也将会在查询时执行 |
 | /b give &lt;player&gt; &lt;points&gt; | 增加玩家点券余额\(云平台\) |
 | /b take &lt;player&gt; &lt;points&gt; | 减少玩家点券余额\(云平台\) |
 | /b set &lt;player&gt; &lt;points&gt; | 重设玩家点券余额\(云平台\) |
@@ -102,7 +107,7 @@
 ## 默认Config.yml 
 
 ```yaml
-## MCRMB插件配置文件，该文件生成于版本：2.0b16
+## MCRMB插件配置文件，该文件生成于版本：2.0b17
 
 ## 服务器信息，请先注册平台，然后从充值平台接口获取。可使用/b setup <sid> <key> 指令快捷设置。自动配置后本文件的中文提示会消失，请留意！
 sid: 'Your_SID'
@@ -147,8 +152,6 @@ qrpay_limit_sec: 0
 ##  玩家退出二维码充值之后，自动执行一次/b money   Ver:2.0b16
 bmoney_after_exit_qrpay: false
 
-
-
 # 是否自动转换为PlayerPoints点券?
 ## 启用该模式后：玩家在进服时触发mcrmb点券余额查询,并自动扣除,加到PlayerPoints账户中. 玩家输入/b money也可以转换余额到PlayerPoints.
 ## 该模式下, b give指令增加的是玩家mcrmb点券余额, 如果想要增加PlayerPoints余额请直接操作PlayerPoints指令.
@@ -158,14 +161,24 @@ playerpoints: false
 # 玩家加入服务器时检查是否有点券余额可以转换，如果你的服务器没有使用BungeeCord，可能会在没登录的时候就已经开始转换，这种情况，请将这里设置为false。  Ver： 2.0b16
 playerpoints_check_on_join_server: true
 
+## 2.0b17新增： 点券转入模式自定义指令，假设：玩家充值1元，得到100点券（MCRMB平台）。登录服务器后，MCRMB平台层玩家点券清空为0，并执行： pp give 玩家名 100.  此指令作用类似与转换为PlayerPoints点券功能。可兼容更多本地点券系统。
+transfer_mode: false
 
+## 2.0b17新增。
+transfer_mode_cmds:
+  - "pp give {player} {points}"  ## 后台模式执行
+  - "op:say 我充值了 {points} 点券! (测试,正式使用请删除)"  ## 指令前加"op:"： 玩家以临时OP权限执行
+  - "p:msg {player} 我充值了{points} 点券! (测试,正式使用请删除)"  ## 指令前加"p:"： 玩家执行
+
+## 2.0b17新增： 玩家进服时是否执行转入模式指令
+transfer_mode_on_join_server: true
 
 ##  指令单词，请勿随意修改! 若修改必须同时修改 plugin.yml 文件。 本指令将影响所有Mcrmb子插件如/b shop 和 /b vip
 command: 'b'
 
 ## 插件内部提示信息，可自行设置。
-point: '点券'
-prefix: '[&c点券中心&r] &e'
+point: '点券' ##点券单位
+prefix: '[&c点券中心&r] &e' ##点券中心前缀
 help:  '
 &e===================MCRMB自动充值系统帮助说明===================<br>
 &e※ 余额查询： /{command} money  &b查询你的余额/累计充值/累计消费<br>
@@ -179,6 +192,9 @@ help:  '
 &b※  示范： /{command} ck 12345678912345678   &d可查询对应的充值卡充值状态<br>
 &e※ 流水查询： /{command} cx &b查询你自己的最后5条交易记录,包括充值和消费<br>
 &e=================================================================='
+
+## 2.0b17新增： 分割线, 本内容出现于各种MCRMB点券中心提示的头与尾。
+separator: '&b-----------------------------------------'
 ```
 
 ## 插件下载
@@ -188,6 +204,15 @@ help:  '
 ## 插件更新说明
 
 版本号后的#为http://ci.mcrmb.com 的构建序号~
+
+### V2.0b17 #89
+Add 扫码功能更新，玩家充值过程中将自动持续检测是否完成支付并执行相应逻辑；  
+Add 自定义指令转入功能`transfer_mode`，类似转入PlayerPoints模式，但可以自定义多个指令，兼容性提升；  
+Add 新增`separator`配置用于自定义系统频繁出现的分隔线；    
+Add 扫码请求API `PayApi.RequestQr` ，返回二维码内容及订单ID，方便开发者深度定制；  
+Add 新的事件：扫码请求事件`QrDoneEvent`、扫码结果轮询事件`QrRequestEvent`，方便开发者深度定制；  
+Fix 修正PayApi.Pay在新版本中可能产生的 `Asynchronous entity track!` 报错；
+
 
 ### V2.0b16 #86 
 Add `qrpay_limit_one_payer`选项，限制同一时间只能有一个玩家可进入二维码状态。因KC等MOD服务端地图所有玩家使用同一对象，导致玩家A充值时二维码会被进入充值状态的玩家B的支付二维码覆盖，建议KC端开启，Catserver端最新版不存在此问题，旧版存在此问题，需要将此项设为 `true`。<br>

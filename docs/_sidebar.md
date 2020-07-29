@@ -10,8 +10,9 @@
     * [插件层接口/事件文档](apis/core-plugin-api.md)
     * [平台层接口文档](apis/platform-api.md)
 
-* 子插件说明文档
+* 插件说明文档
 
+    * [核心插件说明书](core-plugin.md)
     * [McrmbBuyCommand](sub-plugins/mcrmbbuycommand.md)
     * [McrmbShop](sub-plugins/mcrmbshop.md)
     * [McrmbVip](sub-plugins/mcrmbvip.md)
