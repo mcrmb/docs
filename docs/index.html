@@ -25,7 +25,7 @@
     auto2top: true,
     loadSidebar: true,// 加载侧边栏
     subMaxLevel: 2,
-    loadNavbar: true, // 加载导航栏
+    // loadNavbar: true, // 加载导航栏
     coverpage: false,// 设置封装面
     search: {
       maxAge: 3600000, // 过期时间，单位毫秒，默认一天
@@ -60,7 +60,7 @@
 <script>
   var _hmt = _hmt || [];
   // _hmt.push(['_setAutoPageview', false]);
-  _hmt.push(["_trackPageview","/docs/"+window.location.hash]);
+  _hmt.push(["_trackPageview","/"+window.location.hash]);
   _hmt.push(['_requirePlugin', 'UrlChangeTracker', {
     shouldTrackUrlChange: function (newPath, oldPath) {
       return newPath && oldPath;
