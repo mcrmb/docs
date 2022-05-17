@@ -23,7 +23,7 @@
 | whitelist | int | 白名单门槛功能，若为0则禁用<br>若大于0，玩家需要有该数值的点券余额方可进服 |
 | op_modify | boolean | OP是否可以操作玩家点券 |
 | qrpay_ingame | boolean | `2.0b11` 是否开启游戏内扫码支付  |
-| qrpay_compatible | boolean | `2.0b12` 游戏内扫码支付兼容模式 |
+| qrpay_compatible | boolean | `2.0b12` 游戏内扫码支付兼容模式<br>如果开启后依然没法展示二维码，请先移除MOD、插件，**仅保留MCRMB插件**进行测试。 |
 | qrpay_empty_hand | boolean | `2.0b13` 是否必须空手情况下才可发起扫码支付 |
 | qrpay_limit_sec | int | `2.0b13` 扫码支付状态最长可以持续几秒？0为不限制。 |
 | qrpay_limit_one_payer | boolean | `2.0b16` 是否限制只能有一个玩家在扫码状态中。 |
@@ -31,13 +31,14 @@
 | playerpoints | boolean | 转入PlayerPoints模式<br>本功能开启情况下，MCRMB系列子插件不可用。因为点券只在MCRMB中临时停留，玩家进服或刷新余额时，点券将转入`PlayerPoints`插件 |
 | playerpoints_check_on_join_server | boolean | `2.0b16` 转入PlayerPoints模式下，玩家进服时是否查询点券余额转入PlayerPoints |
 | command | string | 指令内容，请勿随意修改! 若修改必须同时修改 plugin.yml 文件。 |
-| point | string | 单位名称（点券、钻石、元宝等） |
-| prefix | string | 提示前缀 |
+| point | string | 提示信息单位名称（可以是点券、钻石、元宝等） |
+| prefix | string | 提示信息前缀，默认为`[&c点券中心&r] &e` |
 | help | string | 玩家帮助信息 |
 | transfer_mode | boolean | `2.0b17` 是否开启自定义指令转入功能，该模式可自定义指令实现玩家查询、登录及充值到账时自动转入点券到服务器（自定义指令方式），优先于playerpoints模式。 |
-| transfer_mode_cmds | list | `2.0b17` 定义转入功能指令集，其中`{player}`将自动替换为目标玩家，`{points}`将自动替换为可转换点券余额<br>默认 config.yml 示例:：<br> `- "p give {player} {points}"` 后台模式执行<br> `- "op:say 我充值了 {points} 点券! (测试,正式使用请删除)" ` 指令前加"op:"： 玩家以临时OP权限执行<br>`- "p:msg {player} 我充值了{points} 点券! (测试,正式使用请删除)"` 指令前加"p:"： 玩家执行|
+| transfer_mode_cmds | list | `2.0b17` 定义转入功能指令集，其中`{player}`将自动替换为目标玩家，`{points}`将自动替换为可转换点券余额，`{timestamp}`将替换为时间戳可适配一些累计充值累计插件.<br>默认 config.yml 示例:：<br> `- "p give {player} {points}"` 后台模式执行<br> `- "op:say 我充值了 {points} 点券! (测试,正式使用请删除)" ` 指令前加"op:"： 玩家以临时OP权限执行<br>`- "p:msg {player} 我充值了{points} 点券! (测试,正式使用请删除)"` 指令前加"p:"： 玩家执行|
 | transfer_mode_on_join_server | boolean | `2.0b17` 自定义转入模式下，玩家进服时是否查询点券并执行逻辑 |
 | separator | string | `2.0b17` 自定义分隔符，可使用颜色代码 `&` 或 `§` |
+| awards | Object | `2.0b18` 累计充值奖励内容配置部分，具体用法请往下拉查看默认config.yml中的注释 |
 
 
 ## 管理指令
@@ -56,6 +57,7 @@
 | /b clearmap \[player\] | `2.0b13` 清理玩家背包中残留的地图（不指定则清理所有在线玩家） |
 | /b cancel \[player\] | `2.0b13` 强行退出玩家的支付状态 |
 | /b cancelall | `2.0b13` 强行退出所有在线玩家的支付状态 |
+| /b unset <玩家名> <奖励代码> | `2.0b18` 清除玩家的领奖状态(若符合条件玩家可再次领取) |
 | /b debug | 开启调试模式 |
 
 ?>`/b give /b take /b set` 3个指令，均为修改云平台的点券余额。  
@@ -76,6 +78,8 @@
 | /b cz &lt;type&gt; &lt;card.num&gt; &lt;card.pass&gt; | 使用卡密充值，type见上衣指令 |
 | /b ck \[card.num\] | 查询卡充值状态 |
 | /b cx | 查询我的最后5个流水（充值+消费） |
+| /b list | `2.0b18` 查看所有累计充值奖励 |
+| /b get <奖励代码> | `2.0b18` 领取累计充值奖励 |
 
 ?>玩家指令在 /b help 可以看到帮助，帮助内容可在config.yml文件中定义。
 ##  PlaceholderApi变量
@@ -107,7 +111,7 @@
 ## 默认Config.yml 
 
 ```yaml
-## MCRMB插件配置文件，该文件生成于版本：2.0b17
+## MCRMB插件配置文件，该文件生成于版本：2.0b18
 
 ## 服务器信息，请先注册平台，然后从充值平台接口获取。可使用/b setup <sid> <key> 指令快捷设置。自动配置后本文件的中文提示会消失，请留意！
 sid: 'Your_SID'
@@ -161,12 +165,14 @@ playerpoints: false
 # 玩家加入服务器时检查是否有点券余额可以转换，如果你的服务器没有使用BungeeCord，可能会在没登录的时候就已经开始转换，这种情况，请将这里设置为false。  Ver： 2.0b16
 playerpoints_check_on_join_server: true
 
+
+
 ## 2.0b17新增： 点券转入模式自定义指令，假设：玩家充值1元，得到100点券（MCRMB平台）。登录服务器后，MCRMB平台层玩家点券清空为0，并执行： pp give 玩家名 100.  此指令作用类似与转换为PlayerPoints点券功能。可兼容更多本地点券系统。
 transfer_mode: false
 
 ## 2.0b17新增。
 transfer_mode_cmds:
-  - "pp give {player} {points}"  ## 后台模式执行
+  - "p give {player} {points}"  ## 后台模式执行
   - "op:say 我充值了 {points} 点券! (测试,正式使用请删除)"  ## 指令前加"op:"： 玩家以临时OP权限执行
   - "p:msg {player} 我充值了{points} 点券! (测试,正式使用请删除)"  ## 指令前加"p:"： 玩家执行
 
@@ -178,7 +184,7 @@ command: 'b'
 
 ## 插件内部提示信息，可自行设置。
 point: '点券' ##点券单位
-prefix: '[&c点券中心&r] &e' ##点券中心前缀
+prefix: '[&c点券中心&r] &e' ##系统前缀
 help:  '
 &e===================MCRMB自动充值系统帮助说明===================<br>
 &e※ 余额查询： /{command} money  &b查询你的余额/累计充值/累计消费<br>
@@ -186,6 +192,8 @@ help:  '
 &e※ QQ充值： /{command} qq <整数金额>  &b发起QQ支付扫码充值<br>
 &e※ 支付宝充值： /{command} zfb <整数金额>  &b发起支付宝支付扫码充值<br>
 &e※ 强退扫码状态： /{command} cancel  &b指令方式退出扫码充值状态<br>
+&e※ 累计充值奖励列表： /{command} list  &b查看所有累计充值奖励活动<br>
+&e※ 获取累计充值奖励： /{command} get <奖励代码>  &b达标后领取累计充值的奖励<br>
 &e※ 卡密充值： /{command} cz <类型> <卡号> <密码>  &b查看卡密类型: /{command} cz<br>
 &b※  示范： /{command} cz yd 12345678912345678 123456789123456789  &d可充值一张移动卡<br>
 &e※ 卡密查询： /{command} ck [卡号]  &b当没有输入卡号的时候，自动查询最后5条卡密记录<br>
@@ -195,15 +203,114 @@ help:  '
 
 ## 2.0b17新增： 分割线, 本内容出现于各种MCRMB点券中心提示的头与尾。
 separator: '&b-----------------------------------------'
+
+
+## 2.0b18新增: 累计充值奖励功能, 请注意累计计算需要区分点券和充值人民币, 如果你的 人民币:点券 是 1:1 那可以忽略
+## 以下是一些乱写的示例, 各位服主可以自行发挥想象力, {player}将替换为玩家名.
+awards:
+  #当type不存在时, 为普通累计器, 使用mcrmb平台玩家的累计充值点券, 该数值可在MCRMB后台清零. type不存在时, begin,end,qd,rmb均无效. 仅可以设置point值.
+  '首充礼包':
+    # 定义达标点券数  type不存在时
+    point: 50
+    # 定义达标奖励
+    cmds:
+      - "points give {player} 1"
+      - "give {player} diamond 100"  ## 后台模式执行
+      - "op:say 我领取了一个首充礼包，开始氪金之旅"  ## 临时OP模式执行
+      - "p:msg {player} 我已累计充值超过50点券 (测试,正式使用请删除)"  ## 玩家模式执行
+
+
+  #当type为sum或max, 为高级累计器,用于限时活动,该累计器将与充值平台的订单数据直接比对, 因此达标单位是[人民币], 如果你的 人民币:点券 是 1:1 可以忽略此提示
+  #当type值存在时, 仅可以设置rmb值, 设置point值没有效果.
+  '微信充值累计100元礼包':
+    # 定义达标人民币金额
+    rmb: 100
+    # 当type为sum时,计算筛选条件内的总额(也就是累计充值多少元)
+    type: "sum"
+    # 开始时间, 格式如下
+    begin: "2020-08-01 00:00:00"
+    # 结束时间, 格式如下
+    end: "2020-08-31 23:59:59"
+    # 充值渠道, wx=微信, zfb=支付宝, qq=QQ钱包, card=充值卡, 若不限渠道, 请不要加这一项.
+    qd: "wx"
+    cmds:
+      - "say {player}在2020.08.01-2020.08.31微信充值累计达到100元即可领取此奖励,只能领取一次"
+
+  '支付宝单笔100元礼包':
+    rmb: 100
+    type: "max"
+    begin: "2020-08-01 00:00:00"
+    end: "2020-08-31 23:59:59"
+    # 充值渠道, wx=微信, zfb=支付宝, qq=QQ钱包, card=充值卡, 若不限渠道, 请不要加这一项.
+    qd: "zfb"
+    cmds:
+      - "say {player}在2020.08.01-2020.08.31微信充值累计达到100元即可领取此奖励,只能领取一次"
+
+  #以下示范用于奖励限定时间内单笔充值高于指定值的玩家.
+  '冲击200元礼包':
+    rmb: 200
+    # 当type为max时,判断筛选条件内最大一笔充值金额是否达到上述rmb数值.
+    type: "max"
+    begin: "2020-08-01 00:00:00"
+    end: "2020-08-31 23:59:59"
+    cmds:
+      - "say {player}在2020.08.01-2020.08.31充值达到200单笔即可领取此奖励,只能领取一次"
+
+  #以下示范用于奖励限定时间内单笔充值高于指定值的玩家.
+  '每100元礼包':
+    rmb: 4
+    type: "gt"
+    # 当type为gt时, 时间段内每次超过该金额均可领取一次奖励, award_log文件将统计已领取次数, 统计值小于云平台返回次数时玩家即可继续领取
+    begin: "2020-08-01 00:00:00"
+    end: "2020-08-31 23:59:59"
+    cmds:
+      - "say {player}在2020.08.01-2020.08.31每笔大于等于4块的订单都可以领一次这奖励..."
+
+  #以下示范用于奖励限定时间内单笔充值高于指定值的玩家.
+  'test1':
+    rmb: 3
+    type: "gt"
+    end: "2020-08-31 23:59:59"
+    cmds:
+      - "say {player}在2020年8月31日之前每笔大于等于3块的订单都可以领一次这奖励..."
+
+  'test2':
+    rmb: 2
+    type: "gt"
+    begin: "2020-08-01 00:00:00"
+    cmds:
+      - "say {player}在2020年8月1日之后每笔大于等于2块的订单都可以领一次这奖励..."
+
+  'test3':
+    rmb: 1
+    type: "gt"
+    cmds:
+      - "say {player}充值了1块钱..."
+
+
+  '累计1000元礼包':
+    rmb: 1000
+    type: "sum"
+    cmds:
+      - "say {player}累计充值了1000块钱..."
 ```
 
 ## 插件下载
-[跳转查看](/sub-plugins/downloads)
+[各插件最新版本下载](/sub-plugins/downloads)
 
 
 ## 插件更新说明
 
 版本号后的#为http://ci.mcrmb.com 的构建序号~
+
+### V2.0b19 #94
+Fix 修正较低版本客户端出现的地图可丢弃等充值状态玩家不受限制问题；  
+Fix 兼容Windows下`b setup`指令自动保存SID和KEY到文件保存无效问题；
+
+### V2.0b18 #92
+Add 新增充值累计奖励功能，具体用法请往上看config.yml文件中注释；
+Fix 修正扫码功能下1.9以后客户端版本玩家使用F键保留地图的问题；
+Add transfer_mode_cmds的命令设置新增一个{timestamp}变量可兼容一些本地累计充值统计插件；
 
 ### V2.0b17 #90
 Add 扫码功能更新，玩家充值过程中将自动持续检测是否完成支付并执行相应逻辑；  

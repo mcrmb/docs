@@ -23,6 +23,7 @@
 
     * [插件持续构建站](https://ci.mcrmb.com)
     * [玩家实名系统](https://v.mcrmb.com)
+    * [微信一清模式](yq.md)
     * [合作商户协议](contract.md)
     * [免责声明书](mianze.md)
     * [原帮助文档(已废弃)](history-help.md)
